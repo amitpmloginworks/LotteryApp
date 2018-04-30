@@ -1,0 +1,156 @@
+ <ion-content class="overlay" text-center ion-fixed padding scroll="false"  (click)="closeOverlay()">
+  <!-- Home Menu -->
+  
+  <div *ngIf="counter==0"style="position: absolute;">
+       <img src="assets/img/sideMenu.png" class="c0SideMenu">
+      <img src="assets/img/share.svg" class="c0arrow">
+     
+  </div>
+  <div  *ngIf="counter==0" class="homeDiv">
+      <p class="c0Description">
+      <span class="descriptionInner">
+          QUICK TOUR {{counter}}/9<br>
+      </span> 
+      Click here for useful links on the app.
+  </p>  
+</div>
+  
+
+   <div *ngIf="counter==2" class="c2MainDiv">
+          <div class="homeCardDiv"><p class="c2Description">
+                  <span  class="descriptionInner">
+                          QUICK TOUR {{counter}}/9<br>
+                      </span> 
+              Useful information about the service .</p>  </div>
+          
+      <img src="assets/img/share.svg" class="c2arrow">
+         
+          <img src="assets/img/homepage.png" class="c2img"><br>
+   </div>
+
+
+  <!-- Credit and Points Menu -->
+
+   <div *ngIf="counter==8 || counter==9" class="c89MinDiv">
+      <img src="assets/img/creditPoints.png" class="c89Image">
+      <span *ngIf="counter==9">
+              <img src="assets/img/share.svg" class="c89arrow">
+              <div class="rotetDiv fstDiv11"><p class="c9Div">
+                      <span  class="descriptionInner">
+                              QUICK TOUR {{counter}}/9<br>
+                          </span> 
+                  Your Credit in Store / Offers pages.</p> </div>
+      </span>
+      <span  *ngIf="counter==8">
+              <img src="assets/img/share.svg" class="c8arrow">
+              
+              <div class="rotetDiv fstDiv12"><p class="c8Description">
+                      <span  class="descriptionInner">
+                              QUICK TOUR {{counter}}/9<br>
+                          </span> 
+                  Spend your points on the Games section.</p> </div>
+          
+      </span>
+  </div>
+
+   <!-- Store Information -->
+   <span  *ngIf="counter==4">
+  <div class="rotetDiv fstDiv"><p class="c4MainDiv">
+      <span class="descriptionInner">
+          QUICK TOUR {{counter}}/9<br>
+      </span> 
+      Click here for useful links on the app.</p>  </div>
+
+  <img src="assets/img/share.svg" class="c4arrow"> 
+</span>
+
+      <!-- Manage Syndicate -->
+      <span *ngIf="counter==5">
+  <div class="rotetDiv sndDiv"><p class="c5mainDiv">
+          <span  class="descriptionInner">
+                  QUICK TOUR {{counter}}/9<br>
+              </span>  
+      Manage your syndicates.</p> </div>
+  <img src="assets/img/share.svg" class="c5arrow">
+</span>
+
+  <!-- Games -->
+  <span *ngIf="counter==6">
+  <div class="rotetDiv thrdDiv"><p class="c6MainDiv">
+          <span  class="descriptionInner">
+                  QUICK TOUR {{counter}}/9<br>
+              </span>  
+      Your games & games for you.</p>  </div>
+  <img src="assets/img/share.svg" class="c6arrow"> 
+</span>
+      <!-- offer -->
+<span *ngIf="counter==7" >
+<div class="rotetDiv fourthDiv"><p class="c7MainDiv">
+      <span  class="descriptionInner">
+              QUICK TOUR {{counter}}/9<br>
+          </span>  
+  Special offers available.</p>  </div>
+  <img src="assets/img/share.svg" class="c7arrow"> 
+</span>
+ <!-- pullup -->
+ <span *ngIf="counter==3">
+ <div class="rotetDiv pullUpDiv"><p class="c3MainDiv">
+      <span  class="descriptionInner">
+              QUICK TOUR {{counter}}/9<br>
+          </span>    
+  Latest news and  programmes for you.</p>  </div>
+  <img src="assets/img/share.svg" class="c3arrow"> 
+  </span> 
+  <!-- bottom image -->
+   
+  <!-- <div *ngIf="counter==4"  class="overlayDiv1">
+      <img src="assets/img/tour_store.png" style="width:90%;border: 5px solid gray">
+  </div>
+  <div *ngIf="counter==5"  class="overlayDiv1">
+      <img src="assets/img/tour_syndicate.png" style="width:90%;border: 5px solid gray">
+  </div>
+  <div *ngIf="counter==6"  class="overlayDiv1">
+      <img src="assets/img/tour_games.png" style="width:90%;border: 5px solid gray">
+  </div>
+  <div *ngIf="counter==7"  class="overlayDiv1">
+      <img src="assets/img/tour_offers.png" style="width:90%;border: 5px solid gray">
+  </div>
+  
+   -->
+  
+   <div *ngIf="counter==4"  class="overlayDiv1">
+      <img src="assets/img/exp.png" style="width:16%;position: absolute;left: 5%;top:5%;height: 70%">
+  </div>
+  <div *ngIf="counter==5"  class="overlayDiv1">
+      <img src="assets/img/exp1.png" style="width:19%;position: absolute;left: 22%;top:5%;height:70%">
+  </div>
+  <div *ngIf="counter==6"  class="overlayDiv1">
+      <img src="assets/img/exp2.png" style="width:16%;position: absolute;right: 20%;top:7%;height:69%">
+  </div>
+  <div *ngIf="counter==7"  class="overlayDiv1">
+      <img src="assets/img/exp3.png" style="width:17%;position: absolute;right: 1%;top:5%;height: 70%">
+  </div>
+
+
+  <div *ngIf="counter==3"  class="overlayDiv">
+          <img src="assets/img/pullup.png" style="width:95%;border: 5px solid gray">
+      </div>
+
+  <!-- Notification -->
+
+  <span *ngIf="counter==1">
+  <img src="assets/img/message-count.png" class="messageCountIcon">
+  <div  class=" fourthDivRight"><p class="c1Description">
+       <span  class="descriptionInner">
+          QUICK TOUR {{counter}}/9<br>
+      </span> 
+      Click here for in app messages. </p></div>
+  <img src="assets/img/share.svg" class="message_count_icon-arrow"> 
+  </span>
+
+  <input type="button" value="TAP TO CONTINUE"  (click)="closeOverlay()" class="continue"> 
+
+ 
+</ion-content>
+
+

@@ -1,0 +1,37 @@
+game-blog {
+    .sample-modal-page {
+        position: absolute;
+        overflow: hidden;
+        max-width: 330px;
+        border-radius: 8px;
+        max-width: 90vw;
+        max-height: 65vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
+        background-color: #fafafa;
+    }
+    span {
+        font-size: 1.9vh;
+        width: 295px;
+        overflow: hidden;
+        white-space: normal;
+    }
+    .btn-transparent {
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        position: relative;
+        left: 35%;
+    }
+}

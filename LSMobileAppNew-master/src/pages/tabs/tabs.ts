@@ -1,0 +1,228 @@
+import { ViewChild, Component, ChangeDetectorRef, ElementRef, Renderer } from '@angular/core';
+import {
+    NavController, NavParams, ModalController, Platform, LoadingController,
+    AlertController, Tabs, MenuController, IonicPage, Tab, Events
+} from 'ionic-angular';
+
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Storage } from '@ionic/storage';
+
+import { Params } from '../../services/params';
+import { HomeService } from '../../services/service.home';
+import { DatabaseService } from '../../services/db.service';
+import { CacheController } from '../../services/cache_controller';
+
+import { AppSoundProvider } from '../../providers/app-sound/app-sound';
+import { HomePage } from '../home/home';
+declare var cordova: any;
+@IonicPage()
+@Component({
+    selector: 'page-tabs',
+    templateUrl: 'tabs.html'
+})
+export class TabsPage {
+    @ViewChild("homeTabs") homeTabs: Tabs;
+
+    tab1Root: any = 'StorePage';
+    tab2Root: any = 'StorePage';
+    tab3Root: any = 'SyndicatesPage';
+    tab4Root: any = 'GamesPage';
+    tab5Root: any = 'AccountPage';
+    tab6Root: any = 'OffersPage';
+
+    mySelectedIndex: number = 2;
+
+    homeCardData: any;
+    gameData: any;
+    homeData: any;
+
+    private cache: CacheController;
+
+    constructor(
+
+        public el: ElementRef, public renderer: Renderer,
+        private cdRef: ChangeDetectorRef,
+        private params: Params,
+        private storage: Storage,
+        private navParams: NavParams,
+        public events: Events,
+        public navCtrl: NavController,
+        private iab: InAppBrowser,
+        public platform: Platform,
+        public _home: HomePage,
+        private srvDb: DatabaseService,
+        private srvHome: HomeService,
+        private menuCtrl: MenuController,
+        public appSound: AppSoundProvider,
+        public modalCtrl: ModalController,
+        private loadingCtrl: LoadingController,
+        private alertCtrl: AlertController) {
+
+        this.menuCtrl
+        console.log("TabsPage", navParams.data);
+
+        this.cache = new CacheController(params, platform, srvDb, srvHome, alertCtrl);
+
+        this.gameData = "game data";
+
+        this.mySelectedIndex = navParams.data.tabIndex || 2;
+
+        if (this.params.events) {
+
+            this.params.events.subscribe('go-page', (page) => {
+
+                let currentTab = this.homeTabs.getActiveChildNav();
+                console.log("go-page", page, currentTab);
+                try {
+
+                    if (page && currentTab.enabled) {
+                        if (currentTab._views[1]) {
+                            currentTab._views[1].dismiss();
+                        }
+                        this.appSound.play('menuClick');
+                        currentTab.push(page);
+                        // this.navCtrl.push(page)
+                    }
+                } catch (e) {
+                    console.log("why the hell", e);
+                }
+            });
+            this.params.events.subscribe('go-tab', (tabIndex) => {
+
+                if (tabIndex) {
+                    try {
+                        this.homeTabs.select(tabIndex);
+                    } catch (e) {
+                        console.log("home tab null", e);
+                    }
+                }
+                else {
+                    tabIndex = 2
+                    try {
+                        this.homeTabs.select(tabIndex);
+                    } catch (e) {
+                        console.log("home tab null", e);
+                    }
+                }
+
+            });
+
+        }
+    }
+
+    ionViewDidLoad() {
+        console.log("TabsPage::ionViewDidLoad");
+        this.homeTabs.select(this.mySelectedIndex);
+    }
+
+    ionViewDidEnter() {
+
+        // this.initData();
+        let loader = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: `<img src="assets/vid/blue_bg.gif" style="height:100px!important">`,
+        });
+        loader.present().then(() => {
+            this.cache.loadModules("home", "1", ["get_home_card", "get_account_details", "get_home_message"])
+                .then(data => {
+                    loader.dismiss().then(() => {
+                        console.log("TabsPage::ionViewDidEnter", data);
+                        this.params.setHomeData(data);
+                    })
+                }, err => {
+                    loader.dismiss().then(() => {
+                        // show offline
+                        this.params.setIsInternetAvailable(false);
+                        console.log("TabsPage::ionViewDidEnter", err);
+                    })
+                });
+
+        });
+    }
+
+    onSelectTab(tab) {
+        var tabss = this.homeTabs.getActiveChildNav()
+
+        if (tabss._views[1] && tab != "sideMenu") {
+            for (let i = 1; i < tabss._views.length; i++) {
+                tabss._views[i].dismiss();
+            }
+        }
+        var menu1 = this.menuCtrl.getMenus();
+        console.log("TabsPage::onSelectTab", tab);
+        this.appSound.play('menuClick');
+        switch (tab) {
+            case 'account':
+                // this.renderer.setElementClass(this.homeTabs.getNativeElement(), 'hidehome', false)
+                // this.renderer.setElementClass(this.homeTabs.getNativeElement(), 'hide-account', true)
+                break
+            case 'sideMenu':
+                menu1[1].open();
+                break;
+            case 'store':
+                this.goToStore();
+                break
+            case 'homePage':
+                this.params.goTab(2)
+                break
+            case 'syndicates':
+                this.events.publish("reloadSyndicate")
+                break
+            default:
+                // this.renderer.setElementClass(this.homeTabs.getNativeElement(), 'hidehome', true)
+                // this.renderer.setElementClass(this.homeTabs.getNativeElement(), 'hide-account', false)
+                break
+
+        }
+    }
+
+    populateHomeData(data: any) {
+        this.homeCardData = data;
+        this.gameData = this.homeCardData.game;
+        this.homeData = this.homeCardData.information_for_you;
+        this.params.setHomeData(this.homeData);
+    }
+
+    goToStore() {
+        // console.log("goToStore()");
+        this.storage.get('session')
+            .then(
+                data => {
+                    let session: any = JSON.parse(data);
+                    //   let url = 'https://nima.lottosocial.com/webview-auth/?redirect_to=store-new&customer_id=';
+                    //   url += session.customer_id + '&customer_token=' + session.customer_token;
+                    //   console.log("session data", data, url);
+
+                    //   let opt:string = "toolbarposition=top";
+                    //   const browser = this.iab.create(url, "_blank", opt);
+
+                    this.platform.ready().then(() => {
+                        if (typeof cordova !== 'undefined') {
+
+                            var browser = this.iab.create('https://nima.lottosocial.com/webview-auth/?redirect_to=store-new&customer_id=' + session.customer_id + '&customer_token=' + session.customer_token + '', '_blank', 'location=no,toolbarposition=top')
+                            // browser.on("loadstop").
+                            //     subscribe(
+                            //     (data) => {
+
+                            //         // alert(data)
+                            //         browser.insertCSS({ code: "body{background-color:#4286f4!important;}" })
+                            //     },
+                            //     err => {
+                            //         console.log("InAppBrowser Loadstop Event Error: " + err);
+                            //     });
+                        }
+                    });
+
+
+                }, error => {
+                    this.params.setIsInternetAvailable(false);
+                    console.log(error)
+                }
+            );
+    }
+    ngOnDestroy() {
+        if (!this.cdRef['destroyed'])
+            this.cdRef.detach(); // try this
+    }
+
+}

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar class="mynav">
+    <ion-title>Manage your syndicate</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <span class="icon-cross" style="content: url(./assets/img/close.svg);min-width: 14px"></span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="main-bg">
+  <div class="main-c">
+    <div class="light-header main-text-padding">SYNDICATE INFO:</div>
+    <div class="main-text-padding">NAME:
+      <span class="lb">{{syndicate?.syndicate_name}}</span>
+    </div>
+    <div class="main-text-padding">CREATED:
+      <span class="lb">{{syndicate?.syndicate_start_date | date:'shortDate'}}</span>
+    </div>
+    <div class="main-text-padding">END:
+      <span class="lb">{{syndicate.syndicate_end_date}}</span>
+    </div>
+    <div class="main-text-padding">SYNDICATE SIZE:
+      <span class="lb" *ngIf="!waveShowingAccount && !result" (tap)="getSize()">{{dynamicText}}</span>
+      <span *ngIf="waveShowingAccount" class="lb">
+        <span class="tooltip t1">
+          <i class="icon3 icon-chat grey">
+            <span class="dot dot-left"></span>
+            <span class="dot"></span>
+            <span class="dot dot-right"></span>
+          </i>
+        </span>
+      </span>
+      <span *ngIf="result && !waveShowingAccount" class="lb">{{sizeOfSyndicate}}</span>
+    </div>
+    <div class="bline"></div>
+    <div class="light-header main-text-padding">PLAYING IN </div>
+    <div class="product-name-wrapper">
+      <span>
+        <p *ngFor="let playing of syndicate.product_group" class="tkt-day">{{playing?.product_name | uppercase}}</p>
+      </span>
+    </div>
+    <div class="main-text-padding">10 Euromillions line in every Tuesday and Friday draw</div>
+  </div>
+  <!-- <div class="sub-c" (click)="openUrl('https://help.lotto-social.com/hc/en-us')"><ion-icon name="ios-help-circle-outline" class="s-ic" style="color: #2F76D1;"></ion-icon>Need help?<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div> -->
+  <div class="sub-c" (click)="viewRecent()">
+    <!-- <span style="content: url(../assets/icon/history-ico.svg); width: 14px;margin-right: 2px;"></span> -->
+    Recent draws
+    <ion-icon name="arrow-forward" class="a-ic"></ion-icon>
+  </div>
+  <div class="sub-c" (click)="viewTicket()">
+    <!-- <span style="content: url(../assets/icon/syndicates_ico.svg); width: 14px;margin-right: 2px;"></span> -->
+    View tickets
+    <ion-icon name="arrow-forward" class="a-ic"></ion-icon>
+  </div>
+  <!-- <div class="sub-c" (click)="Invite()"><span style="content: url(../assets/icon/group-ico.svg); width: 14px;margin-right: 2px;"></span>Invite friends<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div> -->
+  <!-- <div class="sub-c" style="margin-top: 1px;" (click)="openUrl('https://nima.lottosocial.com/webview-auth/?redirect_to=members&customer_id=1970400&customer_token=818113679640')"><span style="content: url(../assets/icon/chat-ico.svg); width: 14px;margin-right: 2px;"></span>Chat with members<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div> -->
+  <div class="sub-c" (click)="agreement()">View syndicate agreement
+    <ion-icon name="arrow-forward" class="a-ic"></ion-icon>
+  </div>
+  <div class="leave-text-wrap">
+    <a (click)="leaveSyndicate()">Leave syndicate</a>
+  </div>
+</ion-content>

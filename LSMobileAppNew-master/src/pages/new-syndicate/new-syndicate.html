@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-icon class="icon" ios="ios-arrow-back" md="md-arrow-back" (click)="close()"></ion-icon>
+    <ion-title class="title">Get Started!</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-card>
+      <img src="assets/image/privateSyndicateBigImage.jpg" height="170px">
+      <img src="assets/icon/icon1.png" class="header-icon" >
+      <p class="header-text" >
+        Join a ready made syndicate! Get more chances for less. Simply select a package and be in the draws immediately.
+        <!-- <b>cheapest rates.</b> We will
+        <b>automatically</b> enter you into an existing syndicate and manage your winnings and payouts equally -->
+      </p>
+      <hr class="hrClass">
+      <p class="newSyndicate-main-text"  >Fast, relaible and convinient,
+        <br> so what are you waiting for? </p>
+      <button (click)="goPage(1)" class="btnJoin" btn ion-button color="primary">VIEW SYNDICATES</button>
+    </ion-card>
+  </ion-row>
+  <ion-row class="bottom-row-wrapper" >
+    <ion-card>
+      <h3 class="headerBottom" class="headerBottom">OR CREATE A SYNDICATE</h3>
+      <hr class="hrClass">
+      <p class="bottomContent">Play with all your friends.
+        <br>Setup your syndicate easily.
+        <br>No more chasing for money!</p>
+      <p class="createSynd">
+        <!-- <b (click)="goPage(0)">CREATE A SYNDICATE</b> -->
+        <button (click)="goPage(0)" class="btnJoin" btn ion-button color="primary">START</button>
+      </p>
+    </ion-card>
+  </ion-row>
+
+</ion-content>

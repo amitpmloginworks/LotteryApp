@@ -1,0 +1,153 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-icon class="icon" ios="ios-arrow-back" md="md-arrow-back" (click)="close()"></ion-icon>
+        <ion-title>Personal Guide</ion-title>
+        <ion-buttons end>
+            <div class="help-header-div" *ngIf="material_icon==1" (click)="openAppBrw()" >
+                <!-- <i class="icon icon-chat grey">
+                    <span class="dot dot-left"></span>
+                    <span class="dot"></span>
+                    <span class="dot dot-right"></span>
+                </i> -->
+                <img  src="https://visualpharm.com/assets/214/Globe%20Bulb-595b40b65ba036ed117d4165.svg" class="circle_inside_Img">
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content (ionScroll)="scrollHandler($event)" class="ionContentDesign" id="contents">
+    
+
+    <div id="inner">
+
+        <ion-card text-center  class="cardMainDesign">
+
+            <div class="cardMainDiv">
+                <span class="badgeDesing"> NEW</span>
+                <p class="cardHeading">Check your winnings</p>
+                <p class="winnings-text">You can simply check your winnings by going to
+                    <span (click)="openSyndicatePage()">your syndicate page</span> and tapping on the
+                    <span class="winningText-check" >"CHECK WINNING"</span> tab</p>
+                <div>
+                    <iframe class="help-frame"  src="https://www.youtube.com/embed/bjBXap_4lzk"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="watch-video-text">
+                    <i>Watch video to find out more about checking winnings</i>
+                </p>
+                <input type="button" class=btnGotIt value="GOT IT"  (click)="openSlider()">
+                <ion-icon class="button-check" ios="ios-checkmark" md="md-checkmark"></ion-icon>
+            </div>
+        </ion-card>
+
+        <div class="marked-header">
+            <div class="marked-header-text">
+                MARKED AS READ
+            </div>
+        </div>
+
+        <ion-card text-center text-wrap class="card-marked">
+            <div class="card-marked-header">
+                <span class="card-mark">
+                    <ion-icon class="card-mark-icon" ios="ios-checkmark" md="md-checkmark"></ion-icon>
+                </span>
+                <p>LOTTO SOCIAL GAMES</p>
+                <div class="show-button">
+                    <span class="pmic" *ngIf="lottoSocialGamesHalf=='halfLotto'" (click)="changeVal('fullLotto')">
+                        <ion-icon class="arrow" ios="ios-arrow-down" md="md-arrow-down" ></ion-icon>
+                    </span>
+                    <span class="pmic" *ngIf="lottoSocialGamesHalf=='fullLotto'" (click)="changeVal('halfLotto')">
+                        <ion-icon class="arrow" ios="ios-arrow-up" md="md-arrow-up" ></ion-icon>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div id="container" [class.active]="lottoSocialGamesHalf=='fullLotto'">
+                    <div class="parent1 part-1">
+                        <div class="parent2">
+                            <div class="parent3 part-1">
+                                <!-- <p *ngIf="lottoSocialGamesHalf=='halfLotto'" style="font-size: 16px;padding: 3px 15px 8px 15px;color: #2C2C2C">
+                                        You can play and get more games from the
+                                        <span style="color: #316BCB">game page</span>. The games are split between ...
+                                        <span style="color: #316BCB" (click)="changeVal('fullLotto')">read more</span>
+                                    </p> -->
+                                    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                                <p *ngIf="lottoSocialGamesHalf=='fullLotto'" style="font-size: 16px;padding: 3px 15px 8px 15px;color: #2C2C2C">
+                                
+                                    instant win games and story games.Instant win games operates like You can play and get more games from the
+                                    <span class="help-color-text"  >game page</span>. The games are split between instant win games and story games. Instant
+                                    win games operates like scratchcards: in every play you have a chance to hit the £7,000
+                                    prize! The story games are divided in chapters and levels. Beat each level in a chapter
+                                    to receive a special prize and all the chapter in the game to win the top prize.
+                                    <span class="help-color-text">Test your skills know </span>.
+                                  
+                                    <!-- <span style="color: #316BCB;padding-left: 10px" (click)="changeVal('halfLotto')"> show less..</span> -->
+                                </p>
+                            </ion-infinite-scroll>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-card>
+     
+        <ion-card text-center text-wrap class="card-marked">
+            <div class="card-marked-header">
+                <span class="card-mark">
+                    <ion-icon class="card-mark-icon" ios="ios-checkmark" md="md-checkmark"></ion-icon>
+                </span>
+                <p>BONUS CREDIT</p>
+                <div class="show-button">
+                    <span class="pmic" *ngIf="lottoSocialBonusHalf=='halfBonus'" (click)="changeValBonus('fullBonus')">
+                        <ion-icon ios="ios-arrow-down" md="md-arrow-down" class="show-button-bonus" ></ion-icon>
+                    </span>
+                    <span class="pmic" *ngIf="lottoSocialBonusHalf=='fullBonus'" (click)="changeValBonus('halfBonus')">
+                        <ion-icon ios="ios-arrow-up" md="md-arrow-up" class="show-button-bonus" ></ion-icon>
+                    </span>
+                </div>
+            </div>
+            <div>
+               
+                <div id="container" [class.active]="lottoSocialBonusHalf=='fullBonus'">
+                    <div class="parent1 part-2">
+                        <div class="parent2">
+                            <div class="parent3 part-2">
+                                
+                                <!-- <p *ngIf="lottoSocialBonusHalf=='halfBonus'" style="font-size: 16px;padding: 3px 15px 8px 15px;color: #2C2C2C">
+                                        You can spend your bonus credit in the
+                                        <span style="color: #316BCB">offer page</span>. by clicking on "SPEND BONUS ...
+                                        <span style="color: #316BCB" (click)="changeValBonus('fullBonus')">read more</span>
+                                    </p> -->
+                                <p *ngIf="lottoSocialBonusHalf=='fullBonus'" class="help-half-bonus">
+                                    CREDIT" and chossing from any lottery available! Accumulate bounus credit by converting your small cash wins. You can spend
+                                    your bonus credit in the
+                                    <span style="color: #316BCB">offer page</span>. by clicking on "SPEND BONUS CREDIT" and chossing from any lottery
+                                    available! Accumulate bounus credit by converting your small cash wins (60p or less)
+                                    into bonus credit worth 4 times its cash value! That's right, if you convert your £1
+                                    cash win into bonus credit you 'll instantly get £4 to spend towards otther lotteries.
+                                    That's 4 time more chances to win any jackpot! 
+                                  
+                                    <!-- <span style="color: #316BCB;padding-left: 10px" (click)="changeValBonus('halfBonus')"> show less</span> -->
+                                </p>
+                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </ion-card>
+ 
+    </div>
+    <br>
+    <div *ngIf="down_arrow_showing==1">
+            <span *ngIf="downShowing==0">
+                <div class="arrow" style="z-index: 9; border: none;background-image: url('assets/img/down_arrow_pulsate.png');" id="newDiv"></div>
+            </span>
+        </div> 
+    
+</ion-content>
+

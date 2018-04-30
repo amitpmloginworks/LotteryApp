@@ -1,0 +1,334 @@
+<popup-confirm-payment #confirmPayment [existing-cards]="userCards" [payment-type]="paymentType" (onPaymentComplete)="paymentDone()"></popup-confirm-payment>
+<ion-content style="top: 0.5%;">
+
+  <ion-grid class="score-panel">
+    <ion-row>
+      <ion-col col-6>
+        <div text-center style="width: 100%">
+
+          <div *ngIf="waveShowing==true">
+            <span class="tooltip t1">
+              <i class="icon11 icon-chat grey" style="margin-left: 47vw">
+                <span class="dot dot-left"></span>
+                <span class="dot"></span>
+                <span class="dot dot-right"></span>
+              </i>
+            </span>
+          </div>
+
+          <div *ngIf="waveShowing==false && bonus_creditAPI>0" (click)="tip()" class="animated fadeIn">
+            <img src="assets/icon/bc_ico.svg" alt="" width="16" height="16" />
+            <span class="tooltip t1">CREDIT
+              <span class="credit">£{{bonus_creditAPI}}</span>
+              <div *ngIf="tip11==true">
+                <div class="animatedtip fadeIntip">
+                  <span class="tooltiptext t-left">
+                    <ul style="margin: 0px; text-align: justify;color: gray; padding-right: 10px">
+                      <li>Bonus credit can be used to
+                        <a href="">Buy MORE lottery Lines</a>
+                      </li>
+                      <li>If you will win less than 60p you can boost the win to
+                        <strong>4x</strong> bonus credit</li>
+                      <li>Bonus credit cannot be converted back into cash</li>
+                    </ul>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div text-center style="width: 100%" *ngIf="waveShowing==false && bonus_creditAPI==0">
+          <img src="assets/icon/bc_ico.svg" alt="" width="16" height="16" />
+          <span class="tooltip t1" (click)="mgmPageOpen()" style="color: cornflowerblue">GET CREDIT </span>
+        </div>
+      </ion-col>
+
+      <ion-col col-5>
+        <div text-center style="width: 100%">
+          <!-- <div  *ngIf="waveShowing==true" >
+                <span class="tooltip t1">
+                  <i class="icon icon-chat grey" style="margin-left: -2vw">
+                      <span class="dot dot-left"></span>
+                      <span class="dot"></span>
+                      <span class="dot dot-right"></span>
+                    </i>
+                </span>
+              </div>  -->
+          <div *ngIf="waveShowing==false && reward_pointsAPI>0" (click)="tip2()" class="animated fadeIn">
+            <img src="assets/icon/rwp_icon.svg" alt="" width="16" height="16" />
+            <span class="tooltip t2">POINTS
+              <span class="points">{{reward_pointsAPI}}</span>
+              <div *ngIf="tip22==true">
+                <div class="animatedtip fadeIntip">
+                  <span class="tooltiptext t-right" style="text-align: justify;padding: 10px; color: gray">
+                    Use your points to get
+                    <strong>games</strong> from the
+                    <a href="">games area</a>. You acquire points every time you check your tickets, by playing game, share with friends
+                    and in many other ways.
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <div text-center style="width: 100%" *ngIf="waveShowing==false && reward_pointsAPI==0">
+          <img src="assets/icon/rwp_icon.svg" alt="" width="16" height="16" />
+          <span class="tooltip t2" style="color:cornflowerblue " (tap)="mgmPageOpen()">GET POINTS </span>
+        </div>
+      </ion-col>
+      <ion-col col-1 (tap)="openNotificationMenu()">
+        <ion-icon name="Msg"></ion-icon>
+        <ion-badge mode="ios" class="badgehomePage">{{unreadCount}}</ion-badge>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- slider -->
+  <!-- Dharam new slider -->
+
+
+  <ion-slides class="newSlide" slidesPerView=1.09 initialSlide="0" #mySlide (swipe)="countSlider($event)" *ngIf="LoadedHomeCard"
+    (click)="clicked()">
+    <span *ngFor="let i of testList" class="display_demo" style="height:100%">
+
+      <span *ngIf="offersForYou.priority==i" class="display_demo" style="height: 100%;">
+        <!-- offer for you -->
+        <ion-slide *ngFor="let offer of offersForYou.offer_group">
+          <ion-card style="max-height: 86%;margin-left: 3%;margin-top: 10%;height: 86%;">
+            <div class="card-top ">
+              <div class="card-title">
+                <img src="assets/img/home/ch_offers@3x.png" style="height: 8vh;border-top-left-radius: 8px;border-top-right-radius: 8px;">
+                <h4>{{offersForYou.card_title}}</h4>
+              </div>
+            </div>
+
+            <div style="position: absolute;width:100%" [style.backgroundColor]="product?.product_color?product?.product_color:grey">
+              <img src="{{offer?.offer_img}}" class="homeHeader-img" style="width:100%" />
+              <div class="homeOffer-title" style="color:white;font-weight: lighter" text-center>{{offer?.name | uppercase}}</div>
+              <div class="homeAmount homeOffer-title" style="color:white;font-weight: 900;font-size: x-large" text-center>
+                {{offer?.offer_jackpot}}
+              </div>
+            </div>
+            <div text-center style="text-align: center;position: relative;margin-top: 30%">
+              <div style="background-color: black;padding: 3px;text-align: -webkit-right;height:50px">
+                <span text-center style="text-align: center">
+                  <img style="top: 3%;position: absolute;margin-left: 6%;width:25px" src="assets/icon/timer.svg" />
+                  <span style="color:white;position:absolute;margin-top: 4%;font-size: 0.8em;margin-left: -21%">TIME LEFT: </span>
+                </span>
+                <div style="display: -webkit-inline-box;color: #fff;bottom: 25px;text-align: -webkit-left;margin-right: 5%">
+                  <div style="margin-right: 10px; margin-left: 15px;text-align: -webkit-center">
+                    <b style="font-size:1.1em">{{day}}</b>
+                    <br>
+                    <span>Days</span>
+                  </div>
+                  <div style="margin-right: 10px;text-align: -webkit-center">
+                    <b style="font-size:1.1em">{{hrs}}</b>
+                    <br>
+                    <span>Hrs</span>
+                  </div>
+                  <div style="margin-right: 10px;text-align: -webkit-center">
+                    <b style="font-size:1.1em">{{min}}</b>
+                    <br>
+                    <span>Mins</span>
+                  </div>
+                  <div style="margin-right: 10px;text-align: -webkit-center">
+                    <b style="font-size:1.1em">{{sec}}</b>
+                    <br>
+                    <span>Secs</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lines-type">
+                <div style="float: left;width: 50%;border-bottom: 1px solid lightgrey;border-right: 1px solid lightgrey;height: 10vh">
+                  <div style="margin-right: 10px;margin-top: 6px">
+                    <b style="font-size:18px"></b>{{offer?.line_group?.line1}}
+                    <br>
+                    <span style="color: lightgray">LINES</span>
+                  </div>
+                  <span style="float: right;bottom: 18px;position: relative;right: 12px;">
+                    <ion-icon ios="ios-alert" md="md-alert"></ion-icon>
+                  </span>
+                </div>
+                <div style="float: left;width: 50%;border-bottom: 1px solid lightgrey;height: 10vh">
+                  <div style="margin-right: 10px;margin-top: 6px">
+                    <b style="font-size:18px">{{offer?.type | uppercase}}</b>
+                    <br>
+                    <span style="color: lightgray">TYPE</span>
+                  </div>
+                  <span style="float: right;bottom: 18px;position: relative;right: 12px;">
+                    <ion-icon ios="ios-alert" md="md-alert"></ion-icon>
+                  </span>
+                </div>
+              </div>
+              <div style="height:40px;margin-top: 10%">
+                <span>{{offer?.offer_title}}</span>
+              </div>
+              <button class="center" padding ion-button text-center color="secondary" (click)="buyCreditOffer(offer?.offer_id,offer?.prosub_id,offer?.button_text)">
+                <span style="font-size: 17px;font-weight: lighter;">
+                  {{offer?.button_text}}
+                </span>
+              </button>
+            </div>
+            <!-- <button class="center" style="bottom: 5vh" padding ion-button text-center clear small (click)="viewAllOffers()" >View all offers</button> -->
+          </ion-card>
+        </ion-slide>
+      </span>
+
+      <span *ngIf="gameGroup!=null && gameGroup!=undefined && gameGroup.priority==i && gameGroup" class="display_demo" style="height: 100%">
+        <!-- games slider -->
+        <ion-slide *ngFor="let game of gameGroup.game.game_group">
+          <ion-card style="max-height:86%;margin-left: 3%;margin-top: 10%;height:86%">
+            <div class="card-top">
+              <div class="card-title">
+                <img src="assets/img/home/ch_games@3x.png" style="border-top-left-radius: 8px; border-top-right-radius: 8px;height:12vh">
+                <h4>YOU HAVE GAMES TO PLAY</h4>
+              </div>
+            </div>
+            <img class="center game-play-img" *ngIf="!game.game_icon_url" src="assets/icon/account_ico.svg" style="width: 300px;height:177px; position: relative; bottom: 32px;">
+            <img class="center game-play-img" *ngIf="game.game_icon_url" src="{{game.game_icon_url}}" style="width: 100%;height:194px; position: relative; bottom: 18px;">
+            <p text-center style="color: orange;font-size: 16px;font-weight: lighter;margin-top: -2%; ">{{game?.game_description1 }}</p>
+            <br>
+            <p text-center padding-left padding-right style="margin-top:-2%;height: 38px;overflow: hidden">{{game.user_game_target}}...</p>
+
+            <div padding>
+              <button class="center" padding ion-button text-center color="secondary" (click)="gameTargetLink(game.target_url)">{{game.button_label}}</button>
+            </div>
+
+          </ion-card>
+        </ion-slide>
+      </span>
+
+      <span *ngIf="invitedPsyndicate!=null && invitedPsyndicate!=undefined && invitedPsyndicate.priority==i" class="display_demo"
+        style="height: 100%;">
+        <!-- syndicate -->
+        <ion-slide *ngFor="let invited of invitedPsyndicate.invited_group">
+          <ion-card style="max-height:86%;margin-left: 3%;margin-top: 10%;height:86%">
+            <div class="card-top">
+              <div class="card-title">
+                <img src="assets/img/home/ch_invited@3x.png" style="border-top-left-radius: 8px; border-top-right-radius: 8px;height:12vh">
+                <h4>YOU HAVE BEEN INVITED!</h4>
+              </div>
+              <img *ngIf="invited.private_syndicate_image_url" class="center invitesyndicate" src="{{invited?.private_syndicate_image_url}}">
+              <img *ngIf="!invited.private_syndicate_image_url" class="center invitesyndicate" src="assets/icon/account_ico.svg">
+              <div style="background: rgba(0, 0, 0, 0.3); position: relative;top: 29px;color: white;">
+                <h2 style="color: white!important">{{invited?.private_syndicate_name}}</h2>
+              </div>
+              <ion-row style="margin-top: 23%;">
+                <ion-col col-3>
+                  <ion-thumbnail item-left class="thumbnalTag">
+                    <img *ngIf="invited.invitee_profile_pic_url" src='{{invited?.invitee_profile_pic_url}}' class="thumbnailListImage">
+                    <img *ngIf="!invited.invitee_profile_pic_url" src='assets/img/voucher_ico.png' class="thumbnailListImage">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-9 style="margin-left: 0px">
+                  <p style="text-align: left">{{invited?.inviter_member_name}} has invited you to join their syndicate with other {{invited?.syndicate_member_count}}
+                    players
+                  </p>
+                </ion-col>
+              </ion-row>
+              <div padding>
+                <button class="center" padding ion-button text-center color="secondary" (click)="gotoSignupInvited(invited)">{{invited?.button_label}}</button>
+              </div>
+            </div>
+          </ion-card>
+        </ion-slide>
+      </span>
+
+      <span *ngIf="inviteToPs!=null && inviteToPs!=undefined && inviteToPs.priority==i" class="display_demo" style="height: 100%;">
+        <!-- invite friends group -->
+        <ion-slide *ngFor="let invitedFriendsGrp of inviteToPs.invite_friends_group">
+          <ion-card style="max-height:86%;margin-left: 3%;margin-top: 10%;height:86%">
+            <div class="card-top">
+              <div class="card-title">
+                <img src="assets/img/home/ch_invite@3x.png" style="border-top-left-radius: 8px; border-top-right-radius: 8px;height:12vh">
+                <h4>PLAY WITH YOUR FRIENDS!</h4>
+              </div>
+              <img *ngIf="invitedFriendsGrp.private_syndicate_image_url" class="center invitesyndicate" src="{{invitedFriendsGrp?.private_syndicate_image_url}}">
+              <img *ngIf="!invitedFriendsGrp.private_syndicate_image_url" class="center invitesyndicate" src="assets/icon/account_ico.svg">
+              <div style=" background: rgba(0, 0, 0, 0.3); position: relative;top: 29px;color: white;">
+                <h2 style="color: white!important">{{invitedFriendsGrp?.private_syndicate_name}}</h2>
+              </div>
+              <ion-row style="margin-top: 23%;">
+                <ion-col col-3>
+                  <ion-thumbnail item-left class="thumbnalTag">
+                    <img *ngIf="invitedFriendsGrp?.img" src='{{invitedFriendsGrp?.img}}' class="thumbnailListImage">
+                    <img *ngIf="!invitedFriendsGrp?.img" src='assets/img/voucher_ico.png' class="thumbnailListImage">
+                  </ion-thumbnail>
+                </ion-col>
+                <ion-col col-9 style="margin-left: 0px">
+                  <p style="text-align: left">
+                    {{invitedFriendsGrp?.description}}
+                  </p>
+                </ion-col>
+              </ion-row>
+              <div padding>
+                <button class="center" padding ion-button text-center color="secondary" (click)="Invite(invitedFriendsGrp.private_syndicate_id)">{{invitedFriendsGrp?.button_label}}</button>
+              </div>
+            </div>
+          </ion-card>
+        </ion-slide>
+      </span>
+
+      <span *ngIf="homejackpots!=null && homejackpots!=undefined && homejackpots.priority==i" class="display_demo" style="height: 100%;">
+        <!-- BIG JACKPOT -->
+        <ion-slide>
+          <ion-card style="max-height:86%;margin-left: 3%;margin-top: 10%;height:86%">
+            <div class="card-top">
+              <div class="card-title">
+                <img src="assets/img/home/ch_invite@3x.png" style="border-top-left-radius: 8px; border-top-right-radius: 8px;height:12vh">
+                <h4>JACKPOTS</h4>
+              </div>
+              <span style="position: relative;top: 11vh;font-size: 2vh;">TAP THE LOTTERY
+                <br>YOU WANT TO PLAY</span>
+              <ion-row style="margin-top: 23%;">
+                <div id="innerYourOffers" style="padding: 7px 30px;margin:0px;width: 100%;text-align: center">
+                  <ion-grid style="text-align: center">
+                    <ion-row style="text-align: center">
+                      <ion-col *ngFor="let jackpot of homejackpots.jackpot_group;let index = i" col-6 style="text-align: center">
+                        <div (click)="moveToCashOfferPage(jackpot)" style=" position: relative;background: #FFF;text-align: center;border: 1px solid #ccc; border-radius: 5px;
+                    height: 17vh;" [style.border-color]="jackpot.product_color">
+                          <div style=" height: 50px;position: absolute;width: 100%;">
+
+                          </div>
+                          <img style=" width: 35%;margin: 7px auto;" src="{{jackpot?.image_url}}" />
+
+                          <h1 style="margin: 0;font-family: Lato-Bold;top: 8px;position: relative;" [style.color]="jackpot.product_color">{{jackpot?.jackpot_amount}}</h1>
+
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </div>
+              </ion-row>
+              <div padding>
+                <button class="center" padding ion-button text-center color="primary" (click)="goToOffers()">SEE MORE</button>
+              </div>
+            </div>
+          </ion-card>
+        </ion-slide>
+      </span>
+    </span>
+  </ion-slides>
+
+
+  <div style="text-align: center; width: 100%;" (click)="clicked()">
+    <p *ngIf="currentSliderCount==0" class="card-tiletext" text-center>{{currentSliderCount+1}} / {{total_cards}} CARDS</p>
+    <p *ngIf="!currentSliderCount==0" class="card-tiletext" text-center>{{currentSliderCount}} / {{total_cards}} CARDS</p>
+
+  </div>
+  <div (tap)="goBlogElementClcik()" class="blogdiv">
+    <span>
+      <ion-icon style="width:50px; ">
+        <img src="assets/icon/iconfinder-icon.svg" style="height: 4vh;margin-top: 4px"> </ion-icon>
+    </span>
+
+
+    <span style=" color: #fff;margin-left: 25px; position: absolute;margin-top: 12px;">
+      FIND OUT WHAT'S ON LOTO SOCIAL
+    </span>
+
+  </div>
+</ion-content>

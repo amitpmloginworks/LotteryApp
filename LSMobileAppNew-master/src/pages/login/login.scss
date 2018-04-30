@@ -1,0 +1,145 @@
+page-login {
+    // ion-card {
+    //     background-color: transparent!important;
+    // }
+    a {
+        text-decoration: none;
+    }
+    h3 {
+        margin-bottom: 3rem;
+    }
+    .grid,
+    .col {
+        padding: 0;
+        text-align: center;
+    }
+    .button-large-md {
+        font-size: 2.2rem;
+    }
+    .item-md {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1.4rem;
+    }
+    .item-md [item-right] {
+        margin: 0 .2em;
+    }
+    .item-md ion-icon [item-left],
+    .item-md ion-icon [item-right] {
+        margin: 0;
+    }
+    .lotto-logo {
+        padding: 1em;
+    }
+    .warning {
+        margin: 0;
+        padding: 1em;
+        margin-top: .6em;
+        background-color: rgba(255, 0, 0, .1);
+        color: red;
+    }
+    .auth-button {
+        margin: 0 1em;
+        width: calc(100% - 2em);
+        max-height: 2.6em;
+    }
+    .showpassword {
+        position: relative;
+        right: 0.7em;
+        bottom: 2em;
+    }
+    .small-icon {
+        font-size: 1.2em;
+        padding-top: .6em;
+    }
+    .remove-inner.item-md.item-block {
+        .input-wrapper {
+            display: inline-table;
+        }
+    }
+    .item-inner {
+        height: 0px
+    }
+    .failed-icon{
+        width:50px;
+    }
+    .forgot-password-backdrop{
+        opacity: .5;
+    }
+    .move-btn-row{
+        margin-top: 20px;
+    }
+    .popup {
+        z-index: 102;
+        .popover-content {
+            p {
+                padding: .6em;
+            }
+            position: relative;
+            margin-top: 55%;
+            padding-left: 1em;
+            padding-right: 1em;
+            .popup-content {
+                padding-right: 2em;
+                padding-left: 2em;
+            }
+            ion-card {
+                background-color: #f8f8f8; // background-color: transparent!important;
+            }
+            .forgot-pass-confirmed {
+                height: 100%;
+                width: 100%;
+                color: white;
+                padding: 15px;
+                background: #18a455; // position: absolute;
+                z-index: 1;
+                border-radius: 3px;
+            }
+        }
+    }
+    .errorcard {
+        background: #990033;
+        padding: 10px;
+        padding-top: 40%;
+        padding-bottom: 30px;
+        bottom: 70px;
+        border-radius: 10px;
+        overflow: visible;
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        min-height: 200px !important;
+        padding-top: 13% !important;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        box-shadow: 0 16px 150px rgba(0, 0, 0, 1.4);
+    }
+    .failedBackground {
+        background: #F8F8F8;
+        border-radius: 50%;
+        width: 25%;
+        height: 70px
+    }
+    .messagecolor {
+        color: #FFFFFF;
+        font-size: 16px;
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+        $font-family-wp-base: "Lato-Regular";
+        padding-top: 5%;
+    }
+    [ion-fixed] {
+        z-index: 0 !important;
+    }
+    .btn-card {
+        position: relative;
+        left: 35%;
+    }
+    // .btn-move {
+    //     position: relative;
+    //     left: 25%;
+    // }
+}

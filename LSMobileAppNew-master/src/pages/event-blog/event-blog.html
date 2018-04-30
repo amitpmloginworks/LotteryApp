@@ -1,0 +1,36 @@
+<ion-content class="modalPageEvent">
+  <!-- <img class="close-button" src="http://www.clker.com/cliparts/t/f/J/i/7/C/amazon-style-close-button-hi.png" style="height:60px;width: 60px;text-align: right"> -->
+  <ion-list class="listEventModal">
+      <ion-row>
+          <ion-col>
+              <ion-item text-center text-wrap>
+                  <h2 text-wrap class="text-center" >{{eventData?.name}}</h2>
+              </ion-item>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-6>
+              <span>
+                  <span class="spans">Start Date</span>
+                  <p>{{startDate}}</p>
+              </span>
+          </ion-col>
+          <ion-col col-6>
+              <span>
+                  <span class="spans">End Date</span>
+                  <p>{{endDate}}</p>
+              </span>
+          </ion-col>
+
+      </ion-row>
+      <ion-col col-12>
+          <img src={{eventData?.image_url}} >
+      </ion-col>
+      <ion-col>
+          <div id="details" [innerHTML]="decodedHtml"></div>
+      </ion-col>
+  </ion-list>
+  <ion-list>
+      <button ion-button full clas="text-center"  (tap)="close()">Close</button>
+  </ion-list>
+</ion-content>

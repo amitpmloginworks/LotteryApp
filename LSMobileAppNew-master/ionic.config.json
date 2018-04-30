@@ -1,0 +1,8 @@
+{
+  "name": "lotto-Social_V3",
+  "app_id": "db077d16",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

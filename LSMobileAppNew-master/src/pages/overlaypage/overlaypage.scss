@@ -1,0 +1,400 @@
+page-overlaypage {
+    .overlay{
+           position: fixed;
+           width: 100%;
+           height: 100%;
+           background: rgba(0,0,0,0.7);
+           top: 0;
+           left: 0;
+       }
+       .descriptionInner{
+         color: #918922;font-size: 14px;    font-family: "Lato-Regular";
+         
+       }
+       .c0SideMenu{
+         height: 42px;border-radius: 50%;max-width: 200%;width: 76%;margin-left: 2%;position: absolute;margin-top: 1px
+       }
+       .c0arrow{
+         left: 92%; color: white; height: 74px; position: relative; top: 4vh;z-index: inherit;transform: rotate(196deg) scaleY(-1);
+       }
+       .c0Description{
+         font-size: 18px;font-weight: bold;padding:4px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c1Description{
+         font-size: 18px;font-weight: bold;padding: 4px;
+         font-family: "Lato-Regular";
+         
+             
+       }
+       .c2MainDiv{
+         margin-top: 10%;width: 100%;position: absolute;
+         font-family: "Lato-Regular";
+         
+       }
+       .c2Description{
+         font-size: 18px;font-weight: bold;padding:5px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c2arrow{
+         left: 15%; color: white; height: 80px; position: relative; top: 0vh;z-index: inherit;transform:rotate(92deg);
+       }
+       .c2img{
+         border: 5px solid gray;height: 53vh;width: 89%;
+       }
+       .c3MainDiv{
+         font-size: 18px;font-weight: bold;padding: 4px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c3arrow{
+         right: 4%; color: white; height: 69px; position: absolute; top: 74vh;z-index: 999;transform:rotate(119deg)
+       }
+       .c89MinDiv{
+         top: 7%;position: absolute;width: 100%;
+         font-family: "Lato-Regular";
+         
+       }
+       .c89Image{
+         width: 100%;border: 5px solid gray
+       }
+       .c89arrow{
+         left: 12%; color: white; height: 68px; position: absolute; top: 7vh;z-index: inherit;transform: rotate(-41deg)
+       }
+       .c9Div{
+         font-size: 18px;font-weight: bold;
+         font-family: "Lato-Regular";
+         
+       }
+       .c8arrow{
+         right: 14%; color: white; height: 68px; position: absolute; top: 7vh;z-index: inherit;transform: scaleX(-1) rotate(-54deg)
+       }
+       .c8Description{
+         font-size: 18px;font-weight: bold;padding: 0px 5px 0px 5px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c4MainDiv{
+         font-size: 18px;font-weight: bold;
+         font-family: "Lato-Regular";
+         
+       }
+       .c4arrow{
+         left: 0%; color: white; height: 12%; position: absolute; top: 77vh;z-index: 999;transform: rotate(62deg) scaleY(-1)
+       }
+       .c5mainDiv{
+         font-size: 18px;font-weight: bold;
+         font-family: "Lato-Regular";
+         
+       }
+       .c5arrow{
+         left: 9%; color: white; height: 12%; position: absolute; top: 77vh;z-index: 999;transform: rotate(44deg) scaleY(-1) 
+       }
+       .c6MainDiv{
+         font-size: 18px;font-weight: bold;padding: 4px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c6arrow{
+         right: 9%; color: white; height: 12%; position: absolute; top: 77vh;z-index: 999;transform:rotate(139deg) 
+       }
+       .c7MainDiv{
+         font-size: 18px;font-weight: bold;padding: 4px;
+         font-family: "Lato-Regular";
+         
+       }
+       .c7arrow{
+         right: 0%; color: white; height: 12%; position: absolute; top: 77vh;z-index: 999;transform:rotate(115deg)
+       }
+   
+       .test {
+               border: 1px solid;
+               float: left;
+               border-radius: 50%;
+               height: 70px;
+               width: 55%;
+           }
+   
+           .font-size-p {
+               text-align: center;
+         word-wrap: break-word;
+         padding: 10px;
+         position:relative;
+         top:20px
+       }
+       
+       .rotetDiv{
+          -ms-transform: rotate(0deg); /* IE 9 */
+          -webkit-transform: rotate(0deg); /* Safari */
+          transform: rotate(0deg); 
+       }
+         .button-got-it{
+           left: 40%;
+           background-color: green;
+           border-radius: 50%;
+           font-size: large;
+           color: white;
+           height: 7%;
+           position: absolute;
+           top: 0%;
+       }
+       .homeDiv{
+         color: white;
+       
+        
+         height: 13.5vh;
+         width: 46%;
+         text-align: center;
+         vertical-align: middle;
+        
+         position: absolute;
+         top: 13vh;
+         left: 6%;
+   
+       }
+       .homeCardDiv{
+         color: white;
+         
+         border-radius: 40%;
+         
+         width: 46%;
+         text-align: center;
+         vertical-align: middle;
+        
+         position: absolute;
+         top: -6vh;
+         right: 43%;
+       }
+         .fstDiv{
+             color: white;
+             
+             border-radius: 40%;
+             height: 86px;
+             width: 46%;
+             text-align: center;
+             vertical-align: middle;
+            
+             position: absolute;
+             top: 60vh;
+             left: 10px;
+             
+         }
+         .sndDiv{
+               color: white;
+              
+               border-radius: 40%;
+               height: 86px ;
+               width: 46%;
+               text-align: center;
+               vertical-align: middle;
+             
+               position: absolute;
+               top: 60vh;
+               left: 0%;
+   
+              
+         }
+         .thrdDiv{
+               color: white;
+          
+               border-radius:40%;
+               height: 86px;
+               width: 46%;
+               text-align: center;
+               vertical-align: middle;
+               
+               position: absolute;
+               top: 60vh;
+               right: 2%;
+         }
+         .fourthDiv{
+               color: white;
+              
+               border-radius: 40%;
+               height: 86px;
+               width: 46%;
+               text-align: center;
+               vertical-align: middle;
+               
+               position: absolute;
+               top: 60vh;
+               right: 10px;
+               
+        }
+        .continue{
+         width: 50%;height: 40px;background: transparent;border-color: white;color: white;
+         border-radius: 30px;margin-top: 140%;font-size: 16px;border:1px solid white;
+         font-family: "Lato-Regular";
+        }
+         .fstDiv11{
+               color: white;
+              
+               border-radius: 25%;
+               height: 90px;
+               width: 35%;
+               text-align: center;
+               vertical-align: middle;
+               
+               position: absolute;
+               top: 16vh;
+               left: 15%;
+               -ms-transform: rotate(0deg); /* IE 9 */
+               -webkit-transform: rotate(0deg); /* Safari */
+               transform: rotate(0deg); 
+           }
+           .fstDiv12{
+               color: white;
+            
+               border-radius: 25%;
+               height: 100px;
+               width: 35%;
+               text-align: center;
+               vertical-align: middle;
+              
+               position: absolute;
+               top: 16vh;
+               right: 15%;
+               -ms-transform: rotate(0deg); /* IE 9 */
+               -webkit-transform: rotate(0deg); /* Safari */
+               transform: rotate(0deg); 
+           }
+            
+            
+             .pullUpDiv{
+               color: white;
+             
+               border-radius: 40%;
+               height: 86px;
+               width: 46%;
+               text-align: center;
+               vertical-align: middle;
+               
+               position: absolute;
+               top: 59vh;
+               right: 12%;
+             }
+          
+            .fourthDivRight{
+               color: white;
+               
+               border-radius: 20%;
+               height: 78px;
+               width: 46%;
+               text-align: center;
+               vertical-align: middle;
+               
+               position: absolute;
+               top: 17vh;
+               right: 10px;
+            }
+            .messageCountIcon{
+                       width: 54px;
+                       top: 0;
+                       position: absolute;
+                       right: 0;
+                       float: right;
+                       border-radius: 50%;
+   
+                 }
+       .messageCountIcon-div{
+           color: white;
+           border: 2px solid;
+           border-radius: 40%;
+           height: 55px;
+           width: 46%;
+           text-align: center;
+           vertical-align: middle;
+         
+           position: absolute;
+           top: 22vh;
+           right: 0;
+           margin-right: -45px;
+           transform: rotate(90deg)
+   
+     }   
+   .message_count_icon-arrow{
+         transform: rotate(-40deg);
+         height: 67px;
+         top: 8vh;
+         position: absolute;
+         right: 8%;
+   }  
+   .scroll-content{
+     padding: 0 !important;
+     height: 100% !important;
+     -webkit-overflow-scrolling: auto;
+     scroll-behavior: auto;
+     overflow-y: hidden;
+   }
+   
+   .overlayDiv{
+         color: white;  height: 79px; position: absolute; top: 86vh;width: 100%;
+   }
+   .overlayDiv1{
+         color: white;  height: 79px; position: absolute; top: 91vh;width: 100%;
+   }
+   @media only screen and (max-width: 320px) {
+         .overlayDiv{
+               color: white;  height: 79px; position: absolute; top: 83vh;width: 100%;
+         }
+         .overlayDiv1{
+               color: white;  height: 79px; position: absolute; top: 89.5vh;width: 100%;
+         }
+         .fstDiv12{
+               color: white;
+              
+               border-radius: 25%;
+               height: 107px;
+               width: 35%;
+               text-align: center;
+               vertical-align: middle;
+              
+               position: absolute;
+               top: 12vh;
+               right: 22%;
+               -ms-transform: rotate(0deg); /* IE 9 */
+               -webkit-transform: rotate(0deg); /* Safari */
+               transform: rotate(0deg); 
+         }
+         .fstDiv{
+           color: white;
+           
+           border-radius: 40%;
+           height: 86px;
+           width: 46%;
+           text-align: center;
+           vertical-align: middle;
+          
+           position: absolute;
+           top: 55vh;
+           left: 10px;
+           
+       }
+         .continue{
+               width: 50%;height: 40px;background: transparent;border-color: white;color: white;
+               border-radius: 30px;margin-top: 135%;font-size: 16px;border:1px solid white;
+              }
+   
+                   
+   }
+   @media only screen 
+   and (min-device-width: 414px) 
+   and (max-device-width: 736px) 
+   and (orientation: portrait) 
+   and (-webkit-min-device-pixel-ratio: 3)
+   {
+         .overlayDiv1{
+               color: white;  height: 79px; position: absolute; top: 92vh;
+         }
+         .overlayDiv{
+               color: white;  height: 79px; position: absolute; top: 87vh;
+         }
+         .continue{
+               width: 50%;height: 40px;background: transparent;border-color: white;color: white;
+               border-radius: 30px;margin-top: 141%;font-size: 16px;border:1px solid white;
+              }
+   
+    }
+   }

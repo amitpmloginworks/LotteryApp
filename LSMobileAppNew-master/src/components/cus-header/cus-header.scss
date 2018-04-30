@@ -1,0 +1,81 @@
+cus-header {
+	height: 42px;
+	position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    width: 100%;
+
+    .ion-ios-menu-left, .ion-md-menu-left, .ion-ios-menu-left-outline,
+    .ion-md-menu-left-outline {
+        content: url(../assets/icon/menu-left.svg);
+        width: 24px;
+    }
+
+    .ion-ios-notification_ico, .ion-md-notification_ico, .ion-ios-notification_ico-outline,
+    .ion-md-notification_ico-outline {
+        content: url(../assets/icon/notification_ico.svg);
+        width: 24px;
+    }
+    .menu2{
+        width: 20px;
+        min-width: 20px;
+        font-size: 48px;
+    }
+    .badge-ios-badge{
+        position: absolute;
+        color: #FF0000;
+        font-family: sans-serif;
+        font-size: smaller;
+        background-color: #E7D011;
+        top: 16px;
+        left: 24px;
+        padding: 3px 5px;
+    }
+    .toolbar-title{
+        padding: 0;
+    }
+    .bell-icon{width:16px;height:16px;}
+
+
+    .bar-button-menutoggle{
+    	display: inline;
+    }
+	
+	@keyframes wobble {
+        // 0% { transform: scale(1); }
+        // 30% { transform: scale(1); }
+        // 40% { transform: scale(1.08); }
+        // 50% { transform: scale(1); }
+        // 60% { transform: scale(1); }
+        // 70% { transform: scale(1.05); }
+        // 80% { transform: scale(1); }
+        // 100% { transform: scale(1); }
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+          }
+          
+          20%, 80% {
+            transform: translate3d(2px, 0, 0);
+          }
+        
+          30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+          }
+        
+          40%, 60% {
+            transform: translate3d(4px, 0, 0);
+          }
+    }
+      .buttonNotification{
+        animation-name: wobble;
+        animation-duration: 2000ms;
+        // transform-origin:70% 10%;
+        animation-iteration-count: 5;
+        // animation-timing-function: linear;
+    }
+    .toolbar-title {
+        padding: 10px!important;
+    }
+}

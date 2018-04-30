@@ -1,0 +1,10 @@
+<ion-tabs #homeTabs class="homeTabs" [selectedIndex]="mySelectedIndex" tabsLayout="icon-top" tabsPlacement="bottom">
+	<!-- <ion-tab tabTitle="Store" tabIcon="store" (ionSelect)="onSelectTab('store')"></ion-tab> -->
+	<ion-tab tabIcon="Menu" tabTitle="More" (ionSelect)="onSelectTab('sideMenu')"></ion-tab>
+	<ion-tab [root]="tab3Root" tabTitle="My Syndicates" tabIcon="syndicates" (ionSelect)="onSelectTab('syndicates')"></ion-tab>
+	<ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home-black" ([rootParams])="homeData" (ionSelect)="onSelectTab('home')"></ion-tab>
+	<ion-tab [root]="tab4Root" tabTitle="Games" tabIcon="games" [rootParams]="gameData" (ionSelect)="onSelectTab('games')"></ion-tab>
+	<!-- <ion-tab [root]="tab5Root" tabTitle="Account" tabIcon="account" (ionSelect)="onSelectTab('account')"></ion-tab> -->
+	<ion-tab [root]="tab6Root" tabTitle="Store" tabIcon="offers" (ionSelect)="onSelectTab('offers')"></ion-tab>
+
+</ion-tabs>

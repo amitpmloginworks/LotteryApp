@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="marg-top-12 main-bg" (ionScroll)="scrollHandlerSyndicate($event)" id="winningContent">
+  <div id="innerWinnings">
+    <div class="main-div">
+      <ion-row>
+        <ion-col class="g-header">HAVE YOU CHECKED YOUR TICKETS?</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Check all your tickets for the past 30 days.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Every time you check a valid ticket you ALSO get Reward Point to spend towards FREE Instant win games!
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button >CHECK MY WINNINGS</button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="list-div">
+      <ion-row>
+        <ion-col class="g-header" style="color:black">List of your previous checks</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> Log of activities for the last 60 days </ion-col>
+      </ion-row>
+      <ion-row class="border-b" style="padding-top: 10px;">
+        <ion-col class="overFlow" col-3> Check Date </ion-col>
+        <ion-col col-2 style="white-space: nowrap"> Lottery</ion-col>
+        <ion-col col-2> Points</ion-col>
+        <ion-col col-2> Prizes </ion-col>
+        <ion-col col-3> View </ion-col>
+      </ion-row>
+      <div style="padding: 0 10px">
+        <ion-row class="border-b list-d" *ngFor="let v of myWinnings;">
+          <ion-col col-3> {{v.check_date}} </ion-col>
+
+          <ion-col col-2 *ngIf="v.check_type == 'cash';else showcashchecktype">
+            <span class="icon-s lottery-check"  style="content: url(./assets/icon/lottery-check.svg);min-width: 14px"></span>
+          </ion-col>
+          <ng-template #showcashchecktype>
+            <ion-col col-2>
+              <span class="icon-s lottery-check-grey" style="content: url(./assets/icon/lottery-check-gray.svg);min-width: 14px"></span>
+            </ion-col>
+          </ng-template>
+
+          <ion-col col-2 *ngIf="v.check_type == 'reward';else showrewardchecktype">
+            <span class="icon-s" style="content: url(./assets/icon/rwp_icon.svg);min-width: 14px"></span>
+          </ion-col>
+          <ng-template #showrewardchecktype>
+            <ion-col col-2>
+              <span class="icon-s" style="content: url(./assets/icon/rwp_icon-gray.svg);min-width: 14px"></span>
+            </ion-col>
+          </ng-template>
+          <ion-col col-2 *ngIf="v.check_type == 'award';else showawardchecktype">
+            <span class="icon-s" style="content: url(./assets/icon/other_prizes_ico.svg);min-width: 14px"></span>
+          </ion-col>
+          <ng-template #showawardchecktype>
+            <ion-col col-2>
+              <span class="icon-s" style="content: url(./assets/icon/other_prizes_gray_ico.svg);min-width: 14px"></span>
+            </ion-col>
+          </ng-template>
+          <ion-col col-3>
+            <span class="icon-s" (click)="openPrizePage()" style="content: url(./assets/icon/view_more.svg);min-width: 14px"></span>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div *ngIf="down_arrow_showing==1">
+  <span *ngIf="downShowing==0">
+    <div class="arrow" style="z-index: 9; border: none;background-image: url('assets/img/down_arrow_pulsate.png');" id="newDiv"></div>
+  </span>
+</div>

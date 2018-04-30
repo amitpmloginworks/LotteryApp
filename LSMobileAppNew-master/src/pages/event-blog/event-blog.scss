@@ -1,0 +1,56 @@
+page-event-blog {
+    .modalPageEvent {
+        position: absolute;
+        overflow: hidden;
+        max-width: 330px;
+        border-radius: 10px;
+        max-width: 88%;
+        max-height: 80%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        box-shadow: 0 16px 20px rgba(0,0,0,.4);
+        background-color: #fafafa;
+    }
+    .text-center{
+            text-align: center;
+    }
+    p{
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+        font-size: inherit;
+    }
+    img{
+        height: 22%;
+        max-width: 97%
+    }
+    .spans{
+        font-weight: 900;
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+    }
+    h3{
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+        font-weight: 900;
+    }
+    .scroll-content{
+        height: 100%;
+    }
+    #details{
+        height: 40%;
+        overflow: scroll;
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+        p{
+            font-size: 15px;
+            padding: 5px
+        }
+    }
+    .listEventModal{
+        height: 88%;
+    }
+}

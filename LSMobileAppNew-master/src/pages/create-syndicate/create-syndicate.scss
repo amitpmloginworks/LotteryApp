@@ -1,0 +1,195 @@
+@font-face {
+    font-family: lato-black;
+    src: url(../assets/fonts/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: lato-regular;
+    src: url(../assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: lato-bold;
+    src: url(../assets/fonts/Lato-Bold.ttf);
+}
+
+page-create-syndicate {
+    .toolbar-background-md {
+        background: rgb(37, 95, 199);
+    }
+    .toolbar-md {
+        min-height: 42px;
+    }
+    .toolbar-title-md {
+        color: white;
+        font-size: 16px;
+        font-family: lato-black;
+    }
+    .bar-button-default-md,
+    .bar-button-clear-md-default,
+    .bar-button-md-default {
+        color: white;
+        font-size: 12px;
+    }
+    .marg-top-12 {
+        margin-top: 12px;
+    }
+    .main-bg {
+        background: #e3e3e3;
+        font-family: lato-regular;
+    }
+    .w-bg {
+        background: white;
+    }
+    .n-bg {
+        background: #1F4C87;
+    }
+    .inner-body {
+        background: white;
+        padding-bottom: 10px;
+    }
+    .pad-top-5 {
+        padding-top: 5px;
+    }
+    .pad-10 {
+        padding: 10px;
+    }
+    font-family: lato-regular;
+    .pad-10 {
+        padding: 10px;
+    }
+    .pad-5 {
+        padding: 5px;
+    }
+    .h-title {
+        padding-bottom: 8px;
+        font-family: lato-black;
+        font-size: 14px;
+        border-bottom: 1.5px solid #ccc;
+    }
+    .s-title {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px;
+        text-align: left;
+        padding: 5px;
+        padding-left: 0;
+    }
+    .hiddenImageButton {
+        height: auto;
+        width: 100%;
+        background: white
+    }
+    form {
+        background: white;
+    }
+    .syndicateName {
+        text-align: center;
+    }
+    .img-picker {
+        // background: url(http://wowslider.com/sliders/demo-10/data/images/autumn_leaves.jpg);
+        //background-size: cover;
+        height: auto;
+        text-align: center; // min-height: 120px;
+        // max-height: 139px;
+    }
+    .button-outline-md {
+        border-color: white;
+        color: white;
+        background-color: transparent;
+        border-style: dashed;
+        text-transform: none;
+    }
+    .marg-35 {
+        margin: 42px;
+    }
+    ion-input {
+        border: 1px solid #ccc;
+        margin-bottom: 2px;
+    }
+    .text-input-md {
+        font-size: 15px;
+    }
+    .errorDiv {
+        text-align: left;
+        padding: 15px;
+        background: #FEE5E5;
+        color: #C10A09;
+        font-size: 16px;
+    }
+    .btn {
+        background: #00A651;
+        height: 34px;
+        border-radius: 3px;
+        width: 50%;
+    }
+    .cover-image-div {
+        height: 100vh;
+        width: 100vw;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        transition: all 1s; // overflow: scroll;
+        .list-md .item-block .item-inner {
+            border-bottom: 0px solid #dedede;
+        }
+        .item-md {
+            border-bottom: 1px solid #ccc;
+        }
+    }
+    .cover-image-div.cclose {
+        top: 100vh;
+        height: 0;
+    }
+    .reload {
+        position: relative;
+        float: right;
+        margin-top: -40px;
+        margin-right: 10px;
+        color: #2f76d1;
+        background: white;
+        font-size: 22px;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        padding: 2px;
+        font-weight: bold;
+    }
+    .bottom_bar {
+        background: rgb(25, 57, 116);
+        padding: 10px; //margin-bottom: 12px;
+        // position: fixed;
+        // text-align: center;
+        // left: 0;
+        // bottom: 0;
+        width: 100%; // right: 0;
+        .button-md {
+            height: 4.5rem;
+            border-radius: 25px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            width: 100%;
+            background: rgb(20, 153, 63);
+        }
+    }
+    .members {
+        img {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background-color: #DDD;
+            border-radius: 50%;
+        }
+    }
+    .camera {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        border-radius: 50% !important;
+        margin-top: 7px;
+        border-right: 2px solid #ccc;
+    }
+}

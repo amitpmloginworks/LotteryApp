@@ -1,0 +1,78 @@
+page-games {
+    .card-background-page {
+        background-color: #E8E8E8 !important;
+        ion-card {
+            position: relative;
+            text-align: center;
+        }
+    }
+    ion-badge {
+        background-color: gold !important;
+        color: black !important;
+        border-radius: 10px !important;
+    }
+    ion-label {
+        white-space: normal !important;
+    }
+    .item-md .text-md-calm {
+        color: #2F76D1 !important;
+    }
+    .item-md .text-md-orange {
+        color: #FF9933 !important;
+    }
+    .item-md h2 {
+        color: #333333 !important;
+    }
+    .item-md .text-md-primary {
+        color: #2F76D1 !important;
+    }
+    .tabbar {
+        background: white!important;
+        border-top-right-radius: 11px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    } // #tab-t1-0 {
+    //     border-bottom-left-radius: 10px;
+    // }
+    .tabs-md .tab-button[aria-selected=true] {
+        background: #3478ce;
+        padding: 0;
+        color: white;
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 10px;
+    }
+    .tabs-md .tab-button[aria-selected=false] {
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        background: white;
+        color: black
+    }
+    .tab-highlight {
+        display: none!important;
+    }
+    .tabbar.show-tabbar {
+        width: 95.5%!important;
+        margin-left: 9px;
+        height: -6px;
+    }
+    .tabs-md .tab-button,
+    .tabs-md .tab-button[aria-selected=true] {
+        font-weight: bold;
+        min-height: 40px;
+    }
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"]>.tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+        background-image: none!important;
+    }
+    .tabbar.show-tabbar {
+        opacity: 1;
+    }
+    .toolbar-md {
+        height: 5px !important;
+        min-height: 5px !important;
+    }
+}

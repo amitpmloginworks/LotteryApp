@@ -1,0 +1,14 @@
+<!-- <cus-header title="Game" (homeClicked)="goHomePage()"></cus-header> -->
+<ion-header>
+    <ion-navbar>
+
+    </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page" (ionScroll)="scrollHandlerGame($event)" id="contentsGames">
+    <div>No data at the moment</div>
+</ion-content>
+<div *ngIf="down_arrow_showing==1">
+    <span *ngIf="downShowing==0">
+        <div class="arrow" style="z-index: 9; border: none;background-image: url('assets/img/down_arrow_pulsate.png');" id="newDiv"></div>
+    </span>
+</div>

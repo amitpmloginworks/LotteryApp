@@ -1,0 +1,430 @@
+page-account {
+    .scroll-content {
+        margin-top: 35px !important;
+        height: 100%;
+    } //FONT IMPORT
+    @import url(https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext); //HOVER-SLIDE TRANSITIONS
+    $hover: all 0.2s ease-in;
+    $slide:all,
+    0.4s 0.1s,
+    cubic-bezier(0.55, 0, 0.1, 1); //COLORS
+    $light-grey: #e0dfe1;
+    $grey: #9f9e9f;
+    $white: #ffffff;
+    $blue: #0190ec;
+    .animated {
+        background-repeat: no-repeat;
+        background-position: left top;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+    }
+    body {
+        background-color: #ffffff;
+        font-family: 'Noto Sans', sans-serif;
+        padding: 100px 200px;
+        text-align: center;
+    }
+    .main-wrapper {
+        padding-top: 60px;
+    }
+    .icons-wrapper {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .icon2 {
+        display: inline-block;
+        vertical-align: top;
+        width: 35px;
+        height: 21px;
+        border-radius: 8px;
+        position: relative;
+        cursor: pointer;
+        &.blue {
+            background-color: $blue;
+            border-top-left-radius: 0;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -14px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 14px 24px 0;
+                border-color: transparent $blue transparent transparent;
+            }
+            .bar {
+                width: 36px;
+                &:before {
+                    width: 36px;
+                }
+                &:after {
+                    width: 40px;
+                }
+            }
+        }
+        &.grey {
+            border-top-right-radius: 0;
+            &:before {
+                content: "";
+            }
+            .dot {
+                animation: wave 0.8s .4s ease-out infinite;
+            }
+            .dot-left {
+                animation: wave 0.8s .2s ease-out infinite;
+            }
+            .dot-right {
+                animation: wave 0.8s .6s ease-out infinite;
+            }
+        }
+    }
+    .bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 40px;
+        margin-left: -20px;
+        margin-top: -3px;
+        height: 6px;
+        background-color: $white;
+        transition: $slide;
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 40px;
+            top: -12px;
+            background-color: $white;
+            transition: $slide;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 30px;
+            bottom: -12px;
+            background-color: $white;
+            transition: $slide;
+        }
+    }
+    .dot {
+        display: block;
+        background-color: $blue;
+        position: absolute;
+        top: 50%;
+        left: 71%;
+        width: 7px;
+        height: 7px;
+        margin-top: -5px;
+        margin-left: -12px;
+        border-radius: 100%;
+        transition: $slide;
+        &.dot-left {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 7px;
+            height: 7px;
+            margin-left: -25px;
+            background-color: $blue;
+            border-radius: 100%;
+            transition: $slide;
+        }
+        &.dot-right {
+            position: absolute;
+            display: block;
+            width: 7px;
+            height: 7px;
+            margin-left: 0px;
+            background-color: $blue;
+            border-radius: 100%;
+            transition: $slide;
+        }
+    } //animation
+    @keyframes wave {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(5px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    no-internet-message {
+        position: absolute;
+        width: 100%;
+    }
+    progress-bar {
+        width: 60%;
+    }
+    .pulsateButton {
+        animation-name: example;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-delay: 1s;
+        animation-iteration-count: 5;
+        animation-direction: alternate;
+        border-radius: 50%
+    }
+    @keyframes example {
+        0% {
+            background-color: #2BB085;
+            left: 0px;
+            top: 0px;
+        }
+        25% {
+            background-color: green;
+            left: 200px;
+            top: 0px;
+        }
+        50% {
+            background-color: #2BB085;
+            left: 200px;
+            top: 200px;
+        }
+        75% {
+            background-color: green;
+            left: 0px;
+            top: 200px;
+        }
+        100% {
+            background-color: #2BB085;
+            left: 0px;
+            top: 0px;
+        }
+    }
+    @keyframes bounce {
+        0% {
+            top: 0px;
+        }
+        25% {
+            top: 5px;
+        }
+        50% {
+            top: 10px;
+        }
+        75% {
+            top: 15px;
+        }
+        100% {
+            top: 20px;
+        }
+    }
+    .arrow {
+        position: fixed;
+        left: 50%;
+        margin-left: -20px;
+        width: 35px;
+        height: 35px;
+        bottom: 20px;
+        margin-top: 150%;
+        opacity: 0.5;
+        background-size: contain;
+        animation-name: bounce;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-delay: 1s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    .profile-completion {
+        font-size: .6em;
+    }
+    .content {
+        height: calc(100% - 2%);
+    }
+    .card {
+        margin: 10px 1px;
+        width: calc(100% - 2px);
+    }
+    .account-avatar {
+        width: 70px;
+        position: relative;
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        .update-icon {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            padding: 0.1em;
+            width: 1.4em;
+            height: 1.4em;
+            bottom: 1px;
+            right: 3px;
+            height: 18px;
+            width: 18px;
+        }
+    }
+    .profile-picture {
+        background: #e3e3e3;
+        height: 72px;
+        width: 72px;
+    }
+    ion-slide {
+        width: 22% !important;
+    }
+    .badge {
+        font-size: 1.4rem;
+        border-radius: 10px;
+    }
+    .account-badge {
+        background: #33ba97;
+        color: white;
+        border-radius: 50%;
+        height: 4em;
+        width: 4em;
+        line-height: 4em;
+        font-size: .8em;
+    }
+    .your-achievements {
+        background-color: #33ba97;
+        padding: 8px;
+        h3 {
+            font-size: 1.2em;
+            font-family: Lato-Bold;
+            color: #FFF;
+        }
+        .slides {
+            min-height: 4em;
+            .slide-zoom {
+                padding: 5px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            p {
+                font-size: .6em;
+                color: #FFF;
+            }
+        }
+    }
+    /* 	.info{
+      padding: 10px;
+
+      h1{
+          font-size: 1.5em;
+          font-weight: bold;
+      }
+      p{
+          font-size: .9em;
+      }
+      .col{
+          border-right: 1px solid #e8e8e8;
+      }
+      .col:last-of-type{
+          border:none;
+      }
+  }
+*/
+    .options {
+        img {
+            width: 14px;
+            height: 14px;
+            min-width: 14px;
+        }
+        .help p {
+            overflow: visible;
+            font-weight: bold;
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .item {
+        margin: 0;
+        .icon {
+            margin: 0 8px 0 0;
+        }
+        .update-img {
+            width: 16px;
+            height: 16px;
+            max-width: 14px;
+            display: inherit;
+            margin: 0 4px;
+        }
+    }
+    .spanClass {
+        padding: 12px;
+    }
+    .links {
+        height: $toolbar-md-height;
+        background-color: #e8e8e8;
+        div {
+            height: 100%;
+        }
+        a {
+            padding: 0 1em;
+            text-transform: none;
+            border-right: 1px solid #3478ce;
+            line-height: $toolbar-md-height;
+        }
+        a:last-of-type {
+            border: none;
+        }
+    }
+    @media only screen and (max-width: 320px) {
+        .arrow {
+            position: fixed;
+            left: 50%;
+            margin-left: -20px;
+            width: 35px;
+            height: 35px;
+            bottom: 20px;
+            opacity: 0.5;
+            margin-top: 144%;
+            background-size: contain;
+            animation-name: bounce;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+        }
+    }
+    .alertCustomCss {
+        // text color for basic alerts
+        color: red; // alert modal page bg color. Warning this will remove the alert transparency
+        background-color: color($colors, dark, base);
+        button {
+            color: white !important; // button text color
+            background-color: color($colors, secondary, base) !important; //button bg color
+        }
+        .alert-message {
+            color: white; // text color for confirm alerts
+        }
+        .alert-wrapper {
+            background-color: color($colors, dark, base); // bg color of alert content
+        }
+    }
+}

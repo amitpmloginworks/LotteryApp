@@ -1,0 +1,95 @@
+<ion-menu side="right" type="push" swipeEnabled=false [content]="content" id="menu1" (ionOpen)="onOpenRightMenu()">
+
+  <ion-content class="home-right-menu-wrapper">
+
+    <ion-item class="notification-bar">
+      <ion-icon name="ios-log-out" (click)="closeMenu1()"></ion-icon>
+      <span class="home-msg-header-text"> Notifications</span>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngIf="messageLoading">
+        <ion-spinner class="center" name="bubbles"></ion-spinner>
+      </ion-item>
+
+      <ion-item-sliding #slidingItem id="delete{{i}}" *ngFor="let message of messages let i=index">
+        <ion-item #item class="home-msg-wrapper" text-wrap (tap)="alert(i)">
+          <span item-left>
+            <img *ngIf="message.icon_url" src="{{message.icon_url}}" alt="" width="24" height="24" />
+            <img *ngIf="!message.icon_url" src="assets/icon/notification_ico.svg" alt="" width="16" height="16" />
+          </span>
+          <!-- <span class="notific-new"></span> -->
+          <p class="home-msg-card-title">{{message.card_title}}</p>
+        </ion-item>
+
+        <ion-item-options side="right">
+          <button ion-button class="btn-delete" (click)="deleteNotification(message.card_id,i)">Delete</button>
+          <button ion-button id="btnRead{{i}}" *ngIf="message.status=='unread'" class="btn-read" (tap)="markAsRead(message.card_id,i)">Mark As Read</button>
+          <button ion-button *ngIf="message.status=='read'" class="btn-unread">Mark As Read</button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-menu side="left" type="overlay" swipeEnabled=false [content]="content" persistent="true" id="menu2" (ionOpen)="onOpenLeftMenu()">
+  <ion-content class="menuLeftBg">
+    <!-- <ion-item text-center> -->
+    <div class="home-leftMenu-wrapper">
+
+      <div class="home-leftMenu-profile-wrap">
+        <ion-avatar class="account-avatarSlide">
+          <img class="profile-pictureSlide" src="{{image_Data}}" width="72" height="72" />
+          <span class="home-profile-name-text">Hi,</span>
+          <span class="home-profile-name">{{nickName}}</span>
+        </ion-avatar>
+      </div>
+
+
+
+    </div>
+    <div class="UpperPart">
+      <p class="home-rightMenu-acc-desc">
+
+        {{accountDetails?.program_description}}
+      </p>
+    </div>
+    <ion-item text-center>
+      <div class="sidemenuCoupon" (click)="mgmPage()">
+        <ion-row class="home-referCode">
+          <ion-col class="home-referCode-wrapper" col-7>
+            <span class="home-userCode">{{userCodeMgm}}</span>
+          </ion-col>
+          <ion-col col-5>
+            <ion-icon ios="ios-share-outline" md="ios-share-outline" class="shareBucketicon"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-item>
+    <!-- <ion-item class="notification-bar"> </ion-item> -->
+    <ion-list>
+      <ion-item text-wrap (tap)="onLeftMenuSelection('accounts')">
+        <span class="color">Accounts </span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-item text-wrap class="home-rightMenu-help" (click)="onLeftMenuSelection('help')">
+      <span class="color">Help</span>
+    </ion-item>
+
+    <ion-item>
+      <div text-center>
+        <img class="home-rightMenu-foo-icon" src="assets/icon/logo_ico.svg" height="20px" width="20px">
+        <span class="home-rightMenu-foo-text">Lotto Social app version 2.6.1</span>
+      </div>
+    </ion-item>
+  </ion-footer>
+</ion-menu>
+
+<!-- <popup-message-details #messageDetails [existing-cards]="userCards"></popup-message-details> -->
+
+<ion-nav #content [root]="rootPage"></ion-nav>

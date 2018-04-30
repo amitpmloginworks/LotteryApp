@@ -1,0 +1,73 @@
+<!--
+  Generated template for the CreateSyndicate page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>Create your syndicate</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+            <ion-icon ios="md-close" md="md-close"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>-->
+<ion-header>
+    <synd-cus-header1 title="PERSONALIZE YOUR SYNDICATE" notification-count="5"></synd-cus-header1>
+</ion-header>
+
+
+<ion-content class="marg-top-12 main-bg">
+    <div class="inner-body">
+        <div class="pad-10">
+            <!-- <div class="h-title"> SYNDICATE DETAILS </div> -->
+            <div class="s-title"></div> Choose a name and photo for your new syndicate </div>
+    </div>
+    <form [formGroup]="todo">
+        <div class="syndicateName">
+            <ion-input class="ng-dirty ng-touched ng-invalid" type="text" placeholder="Enter syndicate name eg Tom's Syndicate" formControlName="title"
+                [(ngModel)]="title" maxlength="25"></ion-input>
+        </div>
+        <div class="img-picker" [ngClass]="{ 'n-bg': !hideimagebtn , 'w-bg': hideimagebtn }">
+            <button ion-button outline icon-left class="marg-35" type="button" [hidden]="hideimagebtn">
+                <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                Add a cover photo
+            </button>
+            <img [src]="sImage" class="hiddenImageButton" [hidden]="!hideimagebtn" />
+            <input type="text" hidden="true" formControlName="image" [(ngModel)]="sImage" />
+            <!-- <ion-icon ios="md-sync" md="md-sync" class="reload" (click)="chooseImage()" [hidden]="!hideimagebtn"></ion-icon> -->
+        </div>
+        <ion-grid class="members">
+            <ion-row justify-content-center>
+                <ion-col col-2>
+                    <img class="camera" src="assets/icon/photo-camera.png" style="padding: 10px;" (click)="accessGallery()">
+                </ion-col>
+                <ion-col col-10>
+                    <ion-slides slidesPerView=5 spaceBetween=15>
+                        <ion-slide *ngFor="let img of images;let i=index" (click)="selectedImage(img)">
+                            <img [src]="img">
+                        </ion-slide>
+                    </ion-slides>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!-- <div style="text-align: center;"> -->
+        <!--<ion-input class="ng-dirty ng-touched ng-invalid" type="text" placeholder="Enter syndicate name" formControlName="title" [(ngModel)]="title" maxlength="25"></ion-input>-->
+        <!-- <div>
+            <p *ngIf="imagechosed" class="errorDiv"><span style="content: url('./assets/img/warning.svg'); width: 12px;"></span> Please select a cover for your syndicate</p>
+            <p *ngIf="namechosed" class="errorDiv"><span style="content: url('./assets/img/warning.svg'); width: 12px;"></span> Please select a valid name for your syndicate</p>
+        </div> -->
+
+        <!-- </div> -->
+
+    </form>
+
+</ion-content>
+
+<ion-footer>
+    <div class="bottom_bar">
+        <button ion-button type="submit" class="btn" (click)="logForm()">Next</button>
+    </div>
+</ion-footer>

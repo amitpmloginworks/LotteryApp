@@ -1,0 +1,44 @@
+
+
+
+<ion-content padding style="background-color: rgba(0,0,0,.1);">
+    <div class="content-page">
+    <div class="content-header" >
+    <p class="text-style">Support</p>
+    <button ion-button icon-end clear class="button-style" (click)="close()">
+     
+      <ion-icon name="close"></ion-icon>
+    </button>
+    </div>
+     <div style="display: flex;
+      justify-content: center;">
+      <ion-searchbar style="width: 65%;" (ionInput)="getItems($event)"></ion-searchbar>
+    </div>
+    <hr class="hr-style" >
+   
+    <div  class="div-box" *ngFor="let item of items;let i=index" (click)="taponitem(i)">
+     <div  class="div-box1" >
+      <p class="label-style"  >  {{ item }}</p>
+     </div>
+     <div class="div-box2" >
+    <img  class="arrow-style"  src="assets/icon/001-arrows.png">
+    </div>
+    </div>
+   <div class="mail-box" >
+    <ion-row>
+      <img  style="height: 25px;" src="assets/icon/001-multimedia.png">
+    </ion-row>
+    </div>
+    <div class="mail-textbox" >
+    <ion-row>
+      <p  class="mail-text" >Send Email</p>
+    </ion-row>
+    </div>
+    <div class="info-box" >
+    <ion-row>
+      <p>If need further help,then email us.</p>
+    </ion-row>
+    </div>
+   </div>
+    </ion-content>
+    

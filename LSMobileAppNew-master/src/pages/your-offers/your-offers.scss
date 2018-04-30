@@ -1,0 +1,231 @@
+page-your-offers {
+    .swiper-slide-prev {
+        transform: scaleX(1.2);
+    }
+    .swiper-slide-next {
+        transform: scaleX(1.16);
+    }
+    .swiper-slide-active {
+        margin-left: 3px;
+    }
+    hr {
+        background: #ddd;
+        clear: both;
+        float: none;
+        width: 100%;
+        height: 1px;
+        margin: 0 0 1.4em;
+        border: none;
+        position: fixed;
+        margin-top: -10px;
+    }
+    .scroll-content {
+        margin-top: 50px !important;
+    }
+    #innerYourOffers {
+        margin-bottom: 200px;
+        padding: 13px 13px;
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        margin-left: 3.6%;
+        background: white;
+    }
+    @keyframes pulse_animation {
+        0% {
+            transform: scale(1);
+        }
+        30% {
+            transform: scale(1);
+        }
+        40% {
+            transform: scale(1.08);
+        }
+        50% {
+            transform: scale(1);
+        }
+        60% {
+            transform: scale(1);
+        }
+        70% {
+            transform: scale(1.05);
+        }
+        80% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes bounce {
+        0% {
+            top: 0px;
+        }
+        25% {
+            top: 5px;
+        }
+        50% {
+            top: 10px;
+        }
+        75% {
+            top: 15px;
+        }
+        100% {
+            top: 20px;
+        }
+    }
+   
+    .arrow {
+        position: fixed;
+        left: 50%;
+        margin-left: -20px;
+        width: 35px;
+        height: 35px;
+        bottom: 20px;
+        margin-top: 150%;
+        opacity: 0.5;
+        background-size: contain;
+        animation-name: bounce;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-delay: 1s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+    }
+    .backcolor {
+        background-color: #E8E8E8;
+    }
+    .backcolornew {
+        background-color: white;
+    }
+    .offers-bundleOfTheDay-wrapper{
+        height: 24vh;
+        position: relative; 
+        background: white;
+        overflow: hidden;
+        width: 94%; 
+        margin-left: 3.5%;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        border-radius: 8px;
+    }
+    .slies-inner-wrapper{
+        height: 22vh;
+    }
+    .offer-slides-text{
+              margin-top: -4px;
+              padding: 4px;
+              font-size: 14px;
+              margin-bottom: 0px;
+              width: 100%;
+              text-align: center;
+              color: white;
+    }
+    .offers-grid-row-col-wrap{
+        position: relative;
+        background: #FFF;
+        text-align: center;
+        border: 1px solid #ccc;
+         border-radius: 5px;
+         height: fit-content;
+         height: 160px;
+    }
+    .offers-space-div{
+        height: 50px;
+        position: absolute;
+        width: 100%;
+    }
+    .offers-grid-price{
+        margin: 10px 0px 16px;
+        font-family: Lato-Bold;
+    }
+    .innerOfferWrapper{
+        margin-top: 10px !important;
+        border-radius: 8px;
+    }
+    .offers-grid-resultDate{
+        padding: 0;
+        margin: 8px;
+        font-size: 1em;
+        font-weight: 900;
+        color: gray;
+    }
+    .offers-grid-image{
+        width: 35%;
+        margin: 16px 0px auto;
+    }
+    .offers-grid{
+        text-align: center;
+    }
+    .offers-grid-row{
+        text-align: center;
+        padding: 0px 6px;
+    }
+    .slides-inner-wrapper{
+        height: 22vh;
+    }
+    .offers-grid-row-col{
+        text-align: center;
+    }
+    .offer-content-list-wrapper{
+        margin-bottom: 20%!important;
+        position: absolute;
+        height: 100%;
+    }
+    .offer-content-md-wrapper{
+        position: relative;
+        width: 94%;
+        top: 3px;
+    }
+    .offer-slides-timer{
+        margin-left: 15px;color: white;
+    }
+    .offer-slides-image{
+        width: 100%;
+        height: 96%;
+        box-shadow: 0px 19px 10px -6px #888888;
+        border-radius: 20px ;
+    }
+    .offer-content-text{
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    .offer-bundle-slides{
+        margin-top: 3px;
+    }
+    .tcard-selected {
+        width: 40px;
+        float: right;
+        animation-name: pulse_animation;
+        animation-duration: 2000ms;
+        transform-origin: 70% 70%;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    @media only screen and (max-width: 320px) {
+        .arrow {
+            position: fixed;
+            left: 50%;
+            margin-left: -20px;
+            width: 35px;
+            height: 35px;
+            bottom: 20px;
+            opacity: 0.5;
+            margin-top: 145%;
+            background-size: contain;
+            animation-name: bounce;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+        }
+    }
+    .bottomContent {
+        .scroll-content {
+            height: 100%!important;
+            margin-top: 5%!important;
+        }
+    }
+}

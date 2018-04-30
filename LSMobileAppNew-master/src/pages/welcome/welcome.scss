@@ -1,0 +1,98 @@
+page-welcome {
+    .scroll-content {
+        bottom: 0px!important;
+        margin-bottom: 0px!important;
+    }
+    h1 {
+        //font-family: 'Lato-Regular' !important;
+        font-size: 28px;
+    }
+    p {
+        margin: 0;
+        font-size: .8em;
+    }
+    .bottom {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        z-index: 10; // z-index: 9999;
+        .button-md {
+            height: 5rem;
+        }
+    }
+    .lotto-logo {
+        padding: 2em;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        z-index: 10;
+    }
+    .slides {
+        // background-color: rgba( 0,0,0,.2 );
+        //height: 100%;
+    }
+    .bg-vid {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: 100%;
+        z-index: -100;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        background-size: cover;
+    }
+    .bg-vidAeroplane {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: 100%;
+        z-index: -100;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        background-size: cover;
+    }
+    .slide-zoom {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets {
+        bottom: 90px;
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+        }
+        .swiper-pagination-bullet-active {
+            // background-color: white;
+        }
+    }
+    .box {
+        text-align: left;
+        padding: 16px 16px 0 16px;
+        position: absolute;
+        bottom: 140px;
+        header {
+            color: #fff;
+            max-width: 80%;
+            padding: 0px 10px 10px 10px;
+            background: rgba( 128, 128, 128, .7);
+        }
+    }
+}

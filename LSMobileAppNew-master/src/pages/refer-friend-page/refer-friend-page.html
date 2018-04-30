@@ -1,0 +1,46 @@
+<ion-header>
+    <newArrow-Header title="Refer to friend" notification-count="5"></newArrow-Header>
+</ion-header>
+<ion-content>
+
+    <div text-center class="headding">
+        <img src="{{getReferfriendData?.mgm_image}}">
+        <div class="redrow" text-center>
+            {{getReferfriendData?.mgm_title}}
+        </div>
+    </div>
+
+    <div class="shareContent">
+        <p>{{getReferfriendData?.mgm_description}}</p>
+    </div>
+    <ion-item no-lines>
+        <button class="btn btn-shareNow" 
+            (click)="shareNow()">
+            <ion-icon ios="ios-share-outline" md="ios-share-outline" class="share-icon" ></ion-icon>
+            <span class="btnShare-text" >SHARE NOW</span>
+        </button>
+    </ion-item>
+    <!-- <div class="social-share" text-center>
+        <span class="left" (click)="emailShare()">
+        <img src="assets/img/mail.svg" class="social-image">
+        <p class="social-share-name">Email</p>
+        </span>
+        <span class="left" (click)="twitterShare()">
+        <img src="assets/img/twitter.svg" class="social-image">
+        <p class="social-share-name">Twitter</p>
+        </span>
+        <span class="left" (click)="whatsappShare()">
+        <img src="assets/img/whatsapp.svg" class="social-image">
+        <p class="social-share-name">WhatsApp</p>
+        </span>
+        <span class="left" (click)="facebookShare()">
+        <img src="assets/img/facebook.svg" class="social-image" >
+        <p class="social-share-name">Facebook</p>
+        </span>
+    </div> -->
+
+    <div class="footer">
+        <p>To qualify the £5 credit, your friend must be register and verify their age.</p>
+    </div>
+
+</ion-content>

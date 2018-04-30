@@ -1,0 +1,393 @@
+page-my-syndicate {
+  --hei: 90px;
+
+  .scroll-content {
+    margin-top: 47px !important;
+  }
+  @keyframes pulse_animation {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.08);
+    }
+    50% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.05);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  //    .progress {
+  //     @name: progress; /* animation name */
+  //     .progress-anim(@name, 50%); /* pass it to mixin */
+  //     animation: @name 2s 1 forwards; /* use variable in animation prop */
+  //   }
+
+  //   .progress-anim(@name; @percentage: 0%) { /* name also as an extra param */
+  //     @keyframes @name { /* set the name dynamically */
+  //       to { width: @percentage }
+  //     }
+  //   }
+
+  #divs {
+    background: red;
+    position: relative;
+    height: 0px;
+    max-height: var(--hei);
+    -webkit-animation: mymove 3s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation: mymove 3s;
+    animation-fill-mode: forwards;
+    height: 100px;
+  }
+  @-webkit-keyframes mymove {
+    from {
+      height: 0px;
+    }
+    to {
+      height: var(--hei);
+      background-color: white;
+    }
+  }
+
+  @keyframes mymove {
+    from {
+      height: 0px;
+    }
+    to {
+      height: var(--hei);
+      background-color: white;
+    }
+  }
+  .pulse {
+    animation-name: pulse_animation;
+    animation-duration: 5000ms;
+    transform-origin: 70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  ion-badge {
+    background-color: gold !important;
+    color: black !important;
+    border-radius: 10px !important;
+  }
+
+  #estate {
+    margin-top: 5%;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    25% {
+      top: 5px;
+    }
+    50% {
+      top: 10px;
+    }
+    75% {
+      top: 15px;
+    }
+    100% {
+      top: 20px;
+    }
+  }
+  .arrow {
+    position: fixed;
+    left: 50%;
+    margin-left: -20px;
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+    margin-top: 150%;
+    opacity: 0.6;
+    background-size: contain;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+  }
+  #innerMySyndicate {
+    margin-bottom: 20%;
+  }
+  ion-label {
+    white-space: normal !important;
+  }
+
+  .tabbar {
+    background-color: #1f4c87 !important;
+  }
+  #sstate {
+    margin-top: -12px;
+  }
+  .item-md .text-md-calm {
+    color: #2f76d1 !important;
+  }
+
+  .item-md .text-md-orange {
+    color: #ff9933 !important;
+  }
+
+  .item-md h2 {
+    color: #333333 !important;
+  }
+
+  .item-md .text-md-primary {
+    color: #2f76d1 !important;
+  }
+
+  .tabs-md-primary[tabsHighlight="true"] .tab-highlight {
+    background: #f8f8f8 !important;
+    height: 4px !important;
+  }
+  .synd-card {
+    margin-bottom: 10px;
+    padding: 15px 15px 0px 15px;
+    .c-title {
+      color: white;
+      font-family: lato-black;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+      font-size: 16px;
+      margin-top: -30px;
+    }
+    .card-md {
+      margin: 0px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .date-lbl {
+      font-size: 14px;
+      color: #b7b7b7;
+      padding: 3px 0;
+    }
+    .pmic {
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: bold;
+      color: #b7b7b7;
+    }
+    .left {
+      text-align: left;
+    }
+    .right {
+      text-align: right;
+    }
+    .tkt-lbl {
+      font-size: 14px;
+      color: #333333;
+      padding: 3px 0;
+    }
+    .tkt-a {
+      font-size: 14px;
+      color: #2f76d1;
+      padding: 3px 0;
+    }
+    .tkt-day {
+      background: #6699cc;
+      padding: 3px 5px;
+      color: white;
+      font-size: 12px;
+      border-radius: 2px;
+      margin-right: 5px;
+    }
+    .day-lbl {
+      font-size: 14px;
+    }
+    .grid {
+      padding: 0;
+    }
+    .col {
+      padding: 3px 0;
+    }
+    ion-item {
+      border-bottom: 1px solid #aaaaaa;
+    }
+    .btn {
+      height: 30px;
+      background: #2f76d1;
+      font-size: 12px;
+      border-radius: 3px;
+      min-width: 120px;
+      display: inline-block;
+    }
+    .synd-ico {
+      float: left;
+      font-size: 25px;
+      color: #ff9933;
+    }
+    .synd-f {
+      line-height: 25px;
+      margin-left: 5px;
+      font-size: 11px;
+    }
+    .chat-btn {
+      width: 73%;
+      height: 23px;
+      font-size: 12px;
+      background: #c10a09;
+      vertical-align: baseline;
+    }
+    .circle {
+      // border: 1px solid #ccc;
+      // border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      //padding: 5px 9px;
+      color: #c10a09;
+      img {
+        margin-top: 4px;
+        display: inline-flex;
+        width: 25px;
+        position: absolute;
+        margin-left: -3px;
+      }
+    }
+
+    .btn2 {
+      height: 30px;
+      background: #00a651;
+      font-size: 12px;
+      border-radius: 3px;
+    }
+  }
+  .danger {
+    color: white;
+    background: red;
+    padding: 10px;
+    text-align: center;
+  }
+  .pad-10 {
+    padding: 10px;
+    background: white;
+    text-align: center;
+  }
+  .sub-div {
+    background: white;
+    margin-top: 12px;
+    text-align: center;
+  }
+  .f-bold {
+    font-family: lato-black;
+    padding: 0 25px;
+  }
+  .green {
+    color: #14993f;
+  }
+  .btn-div {
+    background-color: #304d85;
+    padding: 10px;
+    margin-bottom: 20px;
+    .btn {
+      height: 4.5rem;
+      border-radius: 25px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      width: 100%;
+      background: #14993f;
+    }
+  }
+  ion-icon {
+  }
+  .ticketsInfoP {
+    display: inline-block;
+    font-size: 13px;
+    color: #3e3e3e;
+    padding-top: 2.5%;
+    text-align: center;
+    margin-left: 10%;
+  }
+
+  @media only screen and (max-width: 320px) {
+    .ticketsInfoP {
+      display: inline-block;
+      font-size: 15px;
+      color: #3e3e3e;
+      padding-top: 2.5%;
+      text-align: center;
+      margin-left: 14%;
+    }
+    .arrow {
+      position: fixed;
+      left: 50%;
+      margin-left: -20px;
+      width: 35px;
+      height: 35px;
+      bottom: 20px;
+      opacity: 0.5;
+      margin-top: 131%;
+      background-size: contain;
+      animation-name: bounce;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-delay: 1s;
+      animation-iteration-count: 4;
+      animation-direction: alternate;
+    }
+  }
+  #container {
+    height: auto;
+    position: relative;
+  }
+  .parent1 {
+    /* overall animation container */
+    height: 0;
+    overflow: hidden;
+
+    transition-property: height;
+    transition-duration: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .parent2 {
+    /* full content during animation *can* go here */
+  }
+  .parent3 {
+    /* animated, "folded" block */
+    height: 56px;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+  }
+
+  /* Hover states to trigger animations */
+  .active {
+    .parent1 {
+      // height: 275px;
+    }
+    .parent3 {
+      transform: rotateX(0deg);
+      // height: 275px;
+    }
+    .part-1 {
+      height: 275px;
+    }
+    .part-2 {
+      height: 323px;
+    }
+  }
+}

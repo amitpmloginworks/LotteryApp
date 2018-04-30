@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ManageSyndicate page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar class="mynav">
+    <ion-title>Manage your syndicate</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+          <span class="icon-cross" style="content: url(./assets/img/close.svg);min-width: 14px"></span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="main-bg">
+  <div class="main-c">
+    <div class="light-header" >SYNDICATE INFO:</div>
+    <div class="main-text-padding" >NAME: <span class="lb">{{syndicate?.syndicate_name}}</span></div>
+    <div class="main-text-padding">CREATED: <span class="lb">{{syndicate?.syndicate_start_date | date:'shortDate'}}</span></div>
+    <div class="main-text-padding">END: <span class="lb">{{syndicate.syndicate_end_date}}</span></div>
+    <div class="main-text-padding">MEMBERS: <span class="lb">49</span></div>
+    <div class="bline"></div>
+    <div class="light-header main-text-padding ">PLAYING IN </div>
+    <div class="euro-text-wrapper" >
+        <span>
+            <p *ngFor="let playing of syndicate.product_group" class="tkt-day">{{playing?.product_name | uppercase}}</p>
+          </span>
+      </div>
+    <div class="main-c-text" >10 Euromillions line in every Tuesday and Friday draw</div>
+  </div>
+  <!-- <div class="sub-c"><ion-icon name="ios-help-circle-outline" class="s-ic" style="color: #2F76D1;"></ion-icon>Need help?<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div> -->
+  <div class="sub-c"><span style="content: url(../assets/icon/history-ico.svg); width: 14px;margin-right: 2px;"></span>Recent draws<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div>
+  <div class="sub-c"><span style="content: url(../assets/icon/syndicates_ico.svg); width: 14px;margin-right: 2px;"></span> View tickets<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div>
+  <div class="sub-c">View syndicate agreement<ion-icon name="arrow-forward" class="a-ic"></ion-icon></div>
+  <div *ngIf="syndicate.syndicate_end_date=='oneoff'" class="leave-text"> <a (click)="leaveSyndicate()">Leave syndicate</a></div>
+</ion-content>

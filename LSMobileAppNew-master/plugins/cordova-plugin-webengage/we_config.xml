@@ -1,0 +1,13 @@
+<config>
+    <licenseCode><!-- YOUR LICENSE CODE --></licenseCode>
+    <debug>false</debug>
+    <ios>
+    	<backgroundLocation>false</backgroundLocation>
+        <apnsAutoRegister>true</apnsAutoRegister>
+    	<WEGEnableLocationAuthorizationRequest>NO</WEGEnableLocationAuthorizationRequest>
+    </ios>
+    <android>
+        <packageName><!-- YOUR PACKAGE NAME --></packageName>
+        <autoPushRegister>false</autoPushRegister>
+    </android>
+</config>

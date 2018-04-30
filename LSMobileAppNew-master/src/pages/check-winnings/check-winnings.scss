@@ -1,0 +1,98 @@
+page-check-winnings {
+    .scroll-content {
+       bottom: 0px;
+       margin-top: 49px !important;
+    }
+    .button-md {
+        height: 4.5rem;
+        border-radius: 25px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        width: 100%;
+        background: #14993f;
+}
+.main-div {
+    background: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.g-header {
+    font-family: lato-black;
+    font-size: 16px;
+    color: #14993f;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.list-div {
+    background: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+.list-d {
+   padding: 5px 0;
+}
+.border-b {
+    border-bottom: 1px solid #ccc;
+}
+.icon-s {
+    width: 20px;
+    min-width: 14px;
+}
+    
+  
+
+@keyframes bounce {
+    0%   {top:0px;}
+    25%  {top:5px;}
+    50%  {top:10px;}
+    75%  {top:15px;}
+    100% {top:20px;}
+}
+.arrow {
+  position: fixed;
+  left: 50%;
+  margin-left:-20px;
+  width: 35px;
+  height: 35px;
+  bottom: 20px;
+  margin-top: 150%;
+  opacity: 0.6;
+  background-size: contain;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  z-index: 9; 
+  border: none;
+  background-image: url('assets/img/down_arrow_pulsate.png');
+}
+@media only screen and (max-width: 320px) {
+ 
+    .arrow {
+        position: fixed;
+        left: 50%;
+        margin-left:-20px;
+        width: 35px;
+        height: 35px;
+        bottom: 20px;
+        opacity: 0.5;
+        margin-top: 135%;
+        background-size: contain;
+        animation-name: bounce;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-delay: 1s;
+        animation-iteration-count:4;
+        animation-direction: alternate;
+      }
+}
+.overFlow{
+    //text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+}

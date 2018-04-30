@@ -1,0 +1,32 @@
+<ion-content class="modal-page" text-center ion-fixed padding>
+  <ion-list>
+      <ion-label style="margin-top: 6%; font-size: 16px" text-wrap text-center>INCREASE YOUR WINNING CHANCES TODAY!</ion-label>
+      <ion-item text-wrap align-left no-lines style="padding-top: 10px">
+          <div>
+              <table class="table">
+                  <tr>
+                      <h3 class="text-wrap" style="text-align: center; ">Get 10 EuroMillions lines + 10 UK Millionaire Maker enties + games for only 1... but hurry up this offer expires in: </h3>
+                  </tr>
+              </table>
+          </div>
+      </ion-item>
+      <ion-item no-lines text-wrap>
+          <div style="  margin: 5px; text-align:center">
+              <span class="expButton">{{halfMinFirst}}</span>
+              <span class="expButton">{{halfMinSecond}}</span>
+              <span style="font-size: 40px; font-weight:bold;">:</span>
+              <span class="expButton">{{halfSecFirst}}</span>
+              <span class="expButton">{{halfSecSecond}}</span>
+          </div>
+      </ion-item>
+      <ion-item text-center no-lines>
+          <div class = "text-align-center">
+              <input type="button" value="GET My 10 LINES + GAMES" class="getMy10Line" (click)="done() ">
+          </div>
+          <div  class = "text-align-center padding-top">
+              <p style="text-decoration: none !important;color: #4E85D4; text-align: center; font-size: 15px;
+                  " (click)="dismissPopUp() ">I don't want it </p>
+          </div>
+      </ion-item>
+  </ion-list>
+</ion-content>

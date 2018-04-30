@@ -1,0 +1,111 @@
+<ion-content ion-fixed padding text-center>
+    <div class="closeion-div">
+        <ion-icon ios="ios-close" (click)="closeBlogClick()" class="close-icon" md="md-close"></ion-icon>
+    </div>
+    <div class="datetext">
+        {{currentweekday}} {{currentDate}} {{currentMonth}}
+    </div>
+    <div style="position: relative">
+        <ion-row>
+            <ion-col col-9 item-left>
+                <span style="float: left;font-size: 2em;">
+                    What's on Today
+                </span>
+            </ion-col>
+            <ion-col col-3 item-right>
+                <ion-avatar class="account-avatar">
+                    <img *ngIf="showImage" class="profile-picture" src="{{profileImage}}" />
+                    <img *ngIf="!showImage" class="profile-picture" src="assets/img/150.png" />
+                </ion-avatar>
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <div *ngIf="done">
+        <ion-card *ngFor="let item of homeBlog" (click)="goElementDetails(item,'blog')" class="homeBlogItem">
+            <div>
+                <div class="blogimagetext">
+                    <span class="imageSpan">Latest Blog Post
+                    </span>
+                </div>
+                <img *ngIf="item.image" src="{{item.image}}" class="itemImage">
+                <img *ngIf="!item.image" src="assets/img/150.png" class="assetsImage">
+
+            </div>
+            <div class="bottom-content">
+                <span class="bottom-text">TRY SOMETHING NEW</span>
+                <br/>
+                <span class="render_content">{{item.content.rendered | slice:0:100 }}
+                ....</span>
+            </div>
+        </ion-card>
+        <ion-card *ngFor="let c of millionerImage" (click)="goElementDetails(c,'event')" class="millionerImg">
+            <div>
+                <div class="blogimagetext">
+                    <span class="imageSpan">Latest Events
+                    </span>
+                </div>
+                <img src="{{c.image_url}}">
+            </div>
+        </ion-card>
+        <ion-card class="itemCard">
+            <img src="assets/img/mgm_blog_thumb.jpg" (tap)="mgmOpenPage()">
+            <ion-card-content text-center>
+                £5 CREDIT FOR YOU AND YOUR FRIEND!
+            </ion-card-content>
+
+            <button class="center" ion-button item-right clear small>
+                <div (click)="mgmOpenPage()" class="blog-element-more">Find out more
+                    <ion-icon name="md-arrow-round-forward"></ion-icon>
+                </div>
+            </button>
+        </ion-card>
+    </div>
+
+
+
+
+</ion-content>
+<!-- <ion-content style="margin-bottom: 0px!important;z-index: 10">
+        <ion-card class="big-content" style="background: #333!important">
+    
+    
+          <div class="top-slides-wrapper">
+            <ion-slides class="top-slides" slidesPerView=1.07 spaceBetween="10" style="padding: 0px 5px 0px 6px;">
+              <ion-slide style="width:261px!important;" *ngFor="let item of homeBlog">
+                <div>
+                  <img *ngIf="item.image" src="{{item.image}}" style="width: 100%;height:20vh;">
+                  <img *ngIf="!item.image" src="assets/img/150.png" style="width: 100%;height: 11vh">
+                  <span class="storeslidetext">
+                    <p style="color: white;word-wrap: break-word;padding: 5px;font-weight: 800">{{item.content.rendered}}</p>
+                  </span>
+    
+                
+                </div>
+              </ion-slide>
+    
+    
+            </ion-slides>
+          </div>
+          <ion-slides style="padding: 0px 5px 0px 6px;" spaceBetween=10 slidesPerView=1.5>
+            <ion-slide style="width: 51%" *ngFor="let c of millionerImage" (tap)=openModal(c)>
+              <img src="{{c.image_url}}" width="150" height="100" style="height: 17.5vh;margin-top: 8px;">
+            </ion-slide>
+          </ion-slides>
+    
+    
+          <ion-card class="popup-main" *ngIf="footerState == 1">
+            <img src="assets/img/mgm_blog_thumb.jpg" (tap)="mgmOpenPage()">
+            <ion-card-content text-center>
+              £5 CREDIT FOR YOU AND YOUR FRIEND!
+            </ion-card-content>
+    
+            <button class="center" ion-button item-right clear small>
+              <div (click)="mgmOpenPage()" style="z-index: 0;margin-top: -18px">Find out more
+                <ion-icon name="md-arrow-round-forward"></ion-icon>
+              </div>
+            </button>
+          </ion-card>
+    
+        </ion-card>
+      </ion-content> -->

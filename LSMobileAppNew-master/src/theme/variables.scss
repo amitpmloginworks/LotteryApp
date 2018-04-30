@@ -1,0 +1,144 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #3478ce,
+  secondary:  #00A651,
+  danger:     #C10A09,
+  light:		#f4f4f4,
+  dark:			#222,
+  bonus:		#FF3366,
+  badge:		#E7D011
+);
+// danger:     #f53d3d,
+
+$colors-light:(
+	primary:    #333333,
+	secondary:  #AAAAAA,
+
+	links:		#2F76D1,
+	games:		#FF9933,
+	cash:		#00A651,
+	bonus:		#FF3366,
+	reward:		#2F76D1,
+	walkthrough:#2F76D1,
+);
+
+$colors-dark:(
+	primary:    #F8F8F8,
+	secondary:  #AAAAAA,
+
+	links:		#E7D011,
+	games:		#FF9933,
+	cash:		#00A651,
+	bonus:		#FF3366,
+	reward:		#2F76D1,
+	walkthrough:#2F76D1,
+	countdown:	#FF0000
+);
+
+$colors-header:(
+	primary:    #F8F8F8,
+	notific:	#C10A09
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+$button-md-border-radius: 3px;
+$button-md-height: 34px;
+$badge-font-size: 1rem;
+$badge-font-weight: normal;
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+@font-face {
+	font-family: Lato;
+	src: url("../assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+	font-family: Lato-Black;
+	src: url("../assets/fonts/Lato-Black.ttf");
+}
+@font-face {
+	font-family: Lato-Bold;
+	src: url("../assets/fonts/Lato-Bold.ttf");
+}
+
+@import "roboto";
+@import "noto-sans";
+
+// $font-family-ios-base: "Lato", -apple-system, "Helvetica Neue", "Roboto", sans-serif;
+$font-family-md-base: "Lato", "Roboto", "Helvetica Neue", sans-serif;
+$font-family-wp-base: "Lato", "Segoe UI", "Noto Sans", sans-serif;
+
+$toolbar-background: #2F76D1;
+$toolbar-md-height: 42px;
+
+$tabs-md-tab-text-transform-active: none;
+$tabs-md-tab-text-transition: none;
+
+
+
+//To Display Arrows on Game Start Page
+$item-ios-detail-push-show: true;
+$item-md-detail-push-show: true;
+$item-wp-detail-push-show: true;
+
+

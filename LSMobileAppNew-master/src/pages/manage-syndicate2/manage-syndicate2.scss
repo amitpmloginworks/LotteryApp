@@ -1,0 +1,134 @@
+page-manage-syndicate2 {
+    $blue: #255fc7;
+    $slide: all;
+    .scroll-content {
+        margin-top: 33px!important;
+    }
+    .toolbar-background-md {
+        background: #255fc7;
+    }
+    .mynav {
+        min-height: 42px;
+    }
+    .toolbar-title-md {
+        color: white;
+        font-size: 16px;
+        font-family: lato-black;
+    }
+    .main-bg {
+        background: #e3e3e3;
+        $font-family-md-base: "Lato-Regular";
+        $font-family-ios-base: "Lato-Regular";
+        $font-family-wp-base: "Lato-Regular";
+    }
+    .main-text-padding {
+        padding: 2px 0;
+    }
+    .icon-chat {
+        margin-left: 2vw;
+        margin-top: -4px;
+    }
+    .main-c {
+        margin-top: 12px;
+        background: white;
+        padding: 10px;
+    }
+    .light-header {
+        color: #AAAAAA;
+    }
+    .lb {
+        font-family: lato-black;
+        color: #333333;
+    }
+    .bline {
+        background: #D8D8D8;
+        width: 100%;
+        height: 1px;
+        margin: 10px 0;
+    }
+    .sub-c {
+        margin-top: 10px;
+        background: white;
+        padding: 10px;
+    }
+    .product-name-wrapper {
+        padding: 10px 0;
+        display: -webkit-inline-box;
+        display: inline-block;
+    }
+    .leave-text-wrap {
+        text-align: center;
+        padding: 25px
+    }
+    .tkt-day {
+        background: #6699cc;
+        padding: 3px 5px;
+        color: white;
+        font-size: 12px;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+    .s-ic {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+    .a-ic {
+        float: right;
+        font-size: 20px;
+    }
+    .dot {
+        display: block;
+        background-color: $blue;
+        position: absolute;
+        top: 19%;
+        left: 41%;
+        width: 9px;
+        height: 9px;
+        margin-top: -5px;
+        margin-left: -12px;
+        border-radius: 100%;
+        transition: $slide;
+        &.dot-left {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 9px;
+            height: 9px;
+            margin-left: -25px;
+            background-color: $blue;
+            border-radius: 100%;
+            transition: $slide;
+        }
+        &.dot-right {
+            position: absolute;
+            display: block;
+            width: 9px;
+            height: 9px;
+            margin-left: 0px;
+            background-color: $blue;
+            border-radius: 100%;
+            transition: $slide;
+        }
+    }
+    .dot {
+        animation: wave 0.8s .4s ease-out infinite;
+    }
+    .dot-left {
+        animation: wave 0.8s .2s ease-out infinite;
+    }
+    .dot-right {
+        animation: wave 0.8s .6s ease-out infinite;
+    }
+    @media only screen and (max-width: 414px) {
+        .dot {
+            top: 17%;
+            left: 37%;
+        }
+    }
+    @media only screen and (max-width: 320px) {
+        .dot {
+            top: 20.2vh;
+            left: 48vw;
+        }
+    }
+}

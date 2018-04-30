@@ -1,0 +1,60 @@
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Edit Profile</ion-title>
+        <ion-buttons end>
+            <button ion-button clear icon-only (click)="closeMe()">
+                <ion-icon name="md-close" ></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+    
+    <ion-content >
+        <form #emailForm="ngForm" (ngSubmit)="submitEmail(emailForm)">
+        <ion-grid>	
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Current email</ion-label>
+                <ion-input type="email" name="current_email" [disabled]="true" [(ngModel)]="email.current_email" placeholder="" required></ion-input>
+            </ion-item>
+        </ion-row>
+    
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>New email</ion-label>
+                <ion-input type="email" name="new_email" [(ngModel)]="email.new_email" required></ion-input>
+            </ion-item>
+        </ion-row>
+    
+        <ion-row>
+            <ion-item>
+                <ion-label stacked>Confirm email</ion-label>
+                <ion-input type="email" name="confirm_email" [(ngModel)]="email.confirm_email" required></ion-input>
+            </ion-item>
+        </ion-row>
+    
+        <ion-row >
+            <ion-item>
+                <ion-label stacked>Confirm password</ion-label>
+                <ion-input #current_password type="password" name="current_password" [(ngModel)]="email.current_password" required minlength="6" [attr.minlength]="6" ></ion-input>
+                <ion-icon item-right *ngIf="showPass" name="ios-eye" (click)="showPassword(current_password)"></ion-icon>
+                <ion-icon item-right *ngIf="!showPass" name="ios-eye-off" (click)="showPassword(current_password,'current_password')"></ion-icon>
+            </ion-item>
+    
+            <p>* At least 6 characters. No special characters allowed.</p>
+        </ion-row>
+    
+        </ion-grid>
+    
+        <p *ngIf="warningEmail" class="warning"><ion-icon name="ios-warning-outline"> </ion-icon> Email does not match</p>
+        
+    
+        <div padding>
+            <button class="center" type="submit" ion-button text-center full color="secondary" >UPDATE email</button>
+        </div>
+    
+        </form>
+    </ion-content>
+    

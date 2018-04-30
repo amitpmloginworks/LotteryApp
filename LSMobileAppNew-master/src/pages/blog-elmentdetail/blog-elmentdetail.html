@@ -1,0 +1,18 @@
+<ion-content class="elementDetail-content" >
+    <div *ngIf="done">
+        <div class="closeion-div" (tap)="closeBlogClick()">
+            <ion-icon ios="ios-close" class="close-icon" md="md-close"></ion-icon>
+        </div>
+        <img src="{{displayDetailImage}}" >
+
+        <br>
+
+        <div class="detailImgText"  [innerHTML]="decodedHtml">
+            <!-- <span>
+                No Data is available!
+            </span> -->
+            
+        </div>
+    </div>
+
+</ion-content>

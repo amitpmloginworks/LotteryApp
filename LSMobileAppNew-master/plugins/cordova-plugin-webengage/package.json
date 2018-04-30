@@ -1,0 +1,70 @@
+{
+  "_from": "cordova-plugin-webengage@0.0.6",
+  "_id": "cordova-plugin-webengage@0.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-qGDSA6iXdlQVHaJvBYy80zxiRTgPDuUAndreU4FHxr0G9sM07ARYoVOB8jBu4dOZLroy7suHidQ5oVFHYMDKPw==",
+  "_location": "/cordova-plugin-webengage",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-webengage@0.0.6",
+    "name": "cordova-plugin-webengage",
+    "escapedName": "cordova-plugin-webengage",
+    "rawSpec": "0.0.6",
+    "saveSpec": null,
+    "fetchSpec": "0.0.6"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-webengage/-/cordova-plugin-webengage-0.0.6.tgz",
+  "_shasum": "a33e56c79fdbffe69556d3c170b2cbceba6fa608",
+  "_spec": "cordova-plugin-webengage@0.0.6",
+  "_where": "C:\\Users\\Ashok Kumar\\Downloads\\LSMobileAppNew-master\\LSMobileAppNew-master",
+  "author": {
+    "name": "arpit@webklipper.com"
+  },
+  "bugs": {
+    "url": "https://github.com/WebEngage/cordova-plugin/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "plist": "^2.0.1",
+    "xml2js": "^0.4.17"
+  },
+  "deprecated": false,
+  "description": "WebEngage Plugin that integrates with WebEngage native SDKs(Android & iOS) to provide engagement capabilities for hybrid applications built with PhoneGap/Cordova",
+  "devDependencies": {},
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.1": {
+        "cordova-android": ">=4.1.0",
+        "cordova-ios": ">=4.0.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/WebEngage/cordova-plugin#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android-webengage",
+    "cordova-ios-webengage",
+    "webengage",
+    "push-notifications",
+    "analytics",
+    "engagement",
+    "notifications"
+  ],
+  "license": "ISC",
+  "main": "WebEngagePlugin.js",
+  "name": "cordova-plugin-webengage",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WebEngage/cordova-plugin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.6"
+}

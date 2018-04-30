@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ProfileUpdateModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding class="profile-update-modal-page">
+  <div class="buycard">
+    <button ion-button icon-only class="btn-check">
+      <ion-icon class="btn-check-icon">
+        <img src="assets/icon/check_icon.png"> </ion-icon>
+    </button>
+    <div style="text-align: center ;margin-top : 15%;color: white;font-size: 2.5vh">
+      <span>{{messageShow}}</span>
+    </div>
+    <div *ngIf="awardMsg" style="text-align: center ;margin-top : 2%;color: white;font-size: 2.5vh">
+      <span>{{awardMsg}}</span>
+    </div>
+    <ion-row *ngIf="awardMsg">
+      <ion-col col-12>
+        <button ion-button outline round class="btnDissmiss" color="light" (click)="moveToOffers()">MOVE TO OFFERS</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button outline round class="btnDissmiss" color="light" (click)="dismiss()">Close me!!</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+
+
+</ion-content>

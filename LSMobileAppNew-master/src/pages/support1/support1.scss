@@ -1,0 +1,124 @@
+page-support1 {
+    .searchbar-md .searchbar-input{
+        background-color: transparent !important;
+        box-shadow:0px 0px !important; 
+    }
+    .info-box{
+        justify-content: center;
+    display: flex;
+    margin-top: -21px;
+    color: gray;
+    font-size: 1rem;
+    }
+    .mail-text{
+        color: #3478ce;
+      font-weight: 500; 
+      font-weight: 800;
+    }
+    .mail-textbox{
+        display: flex;
+    justify-content: center;
+    
+    }
+    .mail-box{
+        display: flex;
+    justify-content: center;
+    margin-top: 17px;
+    margin-bottom: -9px;
+    margin-top: 53px;
+    }
+    .div-box{
+        display: block;
+        width: 90%;
+border-bottom: 1px solid #e2dfdf;
+margin-left: 13px;
+    }
+    .div-box1{
+        display: inline-block;
+ width: 80%;
+    }
+    .div-box2{
+        text-align: center;    
+        display: inline-block;
+ width: 17%;
+ margin-left: 4px;
+    }
+.content-page{
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+.item-style
+{
+    width: 85%;
+    position: absolute;
+    top: 72px;
+}
+.content-header{
+    height:42px ;
+    background-color:#3478ce; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+.text-style{
+    position: absolute;
+    color: white; 
+    margin-left: 8px;
+    font-size: 1.5rem;
+    margin-top: 12px;
+}
+.button-style{
+    position: absolute;
+    color: white;
+    left: 238px;
+}
+.hr-style{
+    margin-top: 46px;
+    width: 80%;
+    color: black;
+    height: 2px; 
+}
+.label-icon{
+    margin-left: 79px;  
+}
+.item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 1.4px solid #c7c7c7 !important;
+}
+.line-style{
+    position: absolute;
+    top: 144px;
+    width: 82%;
+ 
+}
+.label-style{
+    font-size: 1.3rem;
+color: #3478ce;
+margin-left: 12px;
+
+justify-content: center;
+align-items: center;
+}
+.icon-style{
+    margin-left: 14px;
+}
+
+ .content-page {
+
+    height: 102%;
+    margin-top: -12px;
+}
+.hr-style{
+    width: 91%;
+    background-color: #d6d2d2;
+    margin-top: -12px;
+    margin-bottom: 16px; 
+}
+.arrow-style{
+    width: 13px;margin-right: -21px;
+}
+}

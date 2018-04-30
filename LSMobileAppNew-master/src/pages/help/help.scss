@@ -1,0 +1,548 @@
+page-help {
+  .scroll-content {
+    padding-bottom: 42px;
+
+  }
+  .circle_inside_Img {
+    width: 36px;
+    height: 36px;
+    margin-top: 1px;
+    margin-right: 20px;
+    right: initial;
+    top: initial;
+    position: relative;
+    background-color: transparent;
+  }
+  .help-frame{
+    border-radius: 3px;
+    background-color: black;
+    width: 92%;height: 25%
+  }
+  helo-header-div{
+    position: relative;
+    margin-bottom: 17px;
+  }
+  btnGotIt{
+    width: 35%;
+    height: 35px;
+    font-size: 1em;
+    text-align: center;
+    background-color: green;
+       border: none;
+       color: white;
+       border-radius: 5px;
+       margin-top: 10px; 
+       font-style: italic;
+  }
+  winningText-check{
+    font-size: 14px;
+  }
+  .title {
+    position: relative;
+    bottom: 26px;
+    left: 40px;
+  }
+  .icon {
+    position: relative;
+    display: inline-block;
+    font-size: 2.2em;
+    top: 9px;
+    left: 8px;
+    color: white;
+  }
+  .toolbar-title-md {
+    padding: 0 10px;
+  }
+  .toolbar-title-ios {
+    padding: 0 10px;
+  }
+
+  .button-inner {
+    margin-top: 5px;
+    margin-left: -10px;
+  }
+  .title title-md {
+    margin-left: -25px;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext);
+  //HOVER-SLIDE TRANSITIONS
+  $hover: all 0.2s ease-in;
+  $slide: all, 0.4s 0.1s, cubic-bezier(0.55, 0, 0.1, 1);
+  //COLORS
+  $light-grey: #e0dfe1;
+  $grey: #9f9e9f;
+  $white: #ffffff;
+  $blue: #0190ec;
+
+  body {
+    background-color: #ffffff;
+    font-family: "Noto Sans", sans-serif;
+    padding: 100px 200px;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    padding-top: 60px;
+  }
+
+  .icons-wrapper {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .icon {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    width: 29px;
+    height: 31px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    //   box-shadow: -1px 1px 5px -1px rgba(55,55,55,0.5);
+    //   box-shadow: rgb(240, 240, 240) 1px 1px,
+    //     rgb(240, 240, 240) 2px 2px,
+    //     rgb(240, 240, 240) 3px 3px,
+    //     rgb(240, 240, 240) 4px 4px,
+    //     rgb(240, 240, 240) 5px 5px,
+    //     rgb(240, 240, 240) 6px 6px,
+    //     rgb(240, 240, 240) 7px 7px,
+    //     rgb(240, 240, 240) 8px 8px,
+    //     rgb(241, 241, 241) 9px 9px,
+    //     rgb(242, 242, 242) 10px 10px,
+    //     rgb(243, 243, 243) 11px 11px,
+    //     rgb(245, 245, 245) 12px 12px,
+    //     rgb(246, 246, 246) 13px 13px,
+    //     rgb(247, 247, 247) 14px 14px,
+    //     rgb(248, 248, 248) 15px 15px,
+    //     rgb(250, 250, 250) 16px 16px,
+    //     rgb(251, 251, 251) 17px 17px,
+    //     rgb(252, 252, 252) 18px 18px,
+    //     rgb(253, 253, 253) 19px 19px,
+    //     rgb(255, 255, 255) 20px 20px;
+
+    &.blue {
+      background-color: $blue;
+      border-top-left-radius: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -14px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 14px 24px 0;
+        border-color: transparent $blue transparent transparent;
+      }
+
+      &:hover {
+        .bar {
+          width: 36px;
+
+          &:before {
+            width: 36px;
+          }
+
+          &:after {
+            width: 40px;
+          }
+        }
+      }
+    }
+
+    &.grey {
+      background-color: $light-grey;
+
+      border-top-right-radius: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 1.5px;
+        right: -7px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 17px 2px 0;
+        border-color: $light-grey transparent transparent transparent;
+      }
+
+      .dot {
+        animation: wave 0.8s 0.4s ease-out infinite;
+      }
+
+      .dot-left {
+        animation: wave 0.8s 0.2s ease-out infinite;
+      }
+
+      .dot-right {
+        animation: wave 0.8s 0.6s ease-out infinite;
+      }
+    }
+  }
+
+  .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 40px;
+    margin-left: -20px;
+    margin-top: -3px;
+    height: 6px;
+    background-color: $white;
+    transition: $slide;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 40px;
+      top: -12px;
+      background-color: $white;
+      transition: $slide;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 30px;
+      bottom: -12px;
+      background-color: $white;
+      transition: $slide;
+    }
+  }
+
+  .dot {
+    display: block;
+    background-color: $grey;
+    position: absolute;
+    top: 57%;
+    left: 76%;
+    width: 6px;
+    height: 6px;
+    margin-top: -5px;
+    margin-left: -11px;
+    border-radius: 100%;
+    transition: $slide;
+
+    &.dot-left {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin-left: -19px;
+      background-color: $grey;
+      border-radius: 100%;
+      transition: $slide;
+    }
+
+    &.dot-right {
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+      background-color: $grey;
+      border-radius: 100%;
+      transition: $slide;
+    }
+  }
+
+  //animation
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .winnings-text {
+    font-size: 13px;
+    padding: 8px 35px 8px 35px;
+    text-align: center;
+    color: #2c2c2c;
+    height: 84px;
+  }
+  .card-md p {
+    margin: 0 0 -2px;
+  }
+  .ionContentDesign {
+    background-color: #e2e2e2;
+  }
+  .cardMainDesign {
+    margin: auto;
+    width: 95%;
+    margin-top: 15px;
+    background: linear-gradient(0deg, #eee 15%, #fff 16%);
+  }
+  .cardMainDiv {
+    text-align: center;
+    margin-bottom: 15px;
+    .watch-video-text {
+      font-size: 11px;
+      padding: 8px;
+      text-align: center;
+      color: #2c2c2c;
+      height: 40px;
+      border-bottom: 1px solid #dddddd;
+    }
+  }
+  .badgeDesing {
+    color: white;
+    background-color: green;
+    font-size: 9px;
+    margin-left: -42%;
+    text-align: right;
+    position: absolute;
+    width: 36px;
+    height: 35px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 500;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 0;
+      border-bottom: 6px solid #fff;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+    }
+  }
+  .cardHeading {
+    font-size: 13px;
+    font-weight: 600;
+    height: 50px;
+    color: #2c2c2c;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #dddddd;
+  }
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    25% {
+      top: 5px;
+    }
+    50% {
+      top: 10px;
+    }
+    75% {
+      top: 15px;
+    }
+    100% {
+      top: 20px;
+    }
+  }
+
+  .arrow {
+    font-weight: bold; 
+    color:#9a9a9a;
+    position: fixed;
+    left: 50%;
+    margin-left: -20px;
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+    margin-top: 150%;
+    opacity: 0.5;
+    background-size: contain;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+  }
+  .help-half-bonus{
+    font-size: 16px;
+    padding: 3px 15px 8px 15px;
+    color: #2C2C2C;  
+  }
+  .show-button-bonus{
+    font-weight: bold; 
+    color:#9a9a9a;
+  }
+  .help-color-text{
+    color: #316BCB;
+  }
+  .scroll-content {
+    // height: 100%;
+    // margin-bottom: 22%!important;
+  }
+
+  .button-check {
+    margin: 0px;
+    margin-left: -50px;
+  }
+
+  .card-mark-icon {
+    margin: 0px;
+    left: -8px;
+    top: -3px;
+  }
+
+  .marked-header {
+    height: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #bbb;
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-style: italic;
+  }
+
+  .marked-header-text {
+    width: 47%;
+    background-color: #e2e2e2;
+    position: absolute;
+    left: 26%;
+    top: -7px;
+    text-align: center;
+    color: #555;
+  }
+
+  .card-marked {
+    margin: auto;
+    width: 95%;
+    margin-top: 10px;
+    // height: 50px;
+    border-radius: 10px 10px 0px 0px !important;
+    // display: grid;
+    // align-items: center;
+    .card-marked-header {
+      text-align: center;
+      position: relative;
+      .card-mark {
+        background-color: #9a9a9a;
+        font-size: 12px;
+        text-align: right;
+        position: absolute;
+        width: 36px;
+        padding: 3px;
+        padding-right: 10px;
+        font-weight: 500;
+        color: white;
+        left: 20px;
+        // top: -16px;
+        height: 35px;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0;
+          height: 0;
+          border-bottom: 6px solid #fff;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+        }
+      }
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        color: #2c2c2c;
+        height: 50px;
+        display: grid;
+        align-items: center;
+        border-bottom: 1px solid #dddddd;
+      }
+      .show-button {
+        position: absolute;
+        right: 30px;
+        top: -12px;
+      }
+    }
+  }
+
+  .flag {
+    position: relative;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  @media only screen and (max-width: 320px) {
+    .arrow {
+      position: fixed;
+      left: 50%;
+      margin-left: -20px;
+      width: 35px;
+      height: 35px;
+      bottom: 20px;
+      opacity: 0.5;
+      margin-top: 145%;
+      background-size: contain;
+      animation-name: bounce;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-delay: 1s;
+      animation-iteration-count: 4;
+      animation-direction: alternate;
+    }
+  }
+
+  /* Static state */
+  #container {
+    height: auto;
+    position: relative;
+  }
+  .parent1 {
+    /* overall animation container */
+    height: 0;
+    overflow: hidden;
+
+    transition-property: height;
+    transition-duration: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .parent2 {
+    /* full content during animation *can* go here */
+  }
+  .parent3 {
+    /* animated, "folded" block */
+    height: 56px;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+  }
+
+  /* Hover states to trigger animations */
+  .active {
+    .parent1 {
+      // height: 275px;
+    }
+    .parent3 {
+      transform: rotateX(0deg);
+      // height: 275px;
+    }
+    .part-1 {
+      height: 275px;
+    }
+    .part-2 {
+      height: 402px;
+    }
+  }
+}
