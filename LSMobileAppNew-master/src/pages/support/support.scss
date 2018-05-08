@@ -1,9 +1,41 @@
 page-support {
+    .header-style{
+        justify-content: center;
+        display: flex;
+        margin-top: 13px;
+    }
+    .line-style{
+        font-weight: 500;
+        color: #A7A7A9;
+    }
+    .img-style{
+        height: 13px;
+        margin-top: 8px;
+        margin-right: 6px;
+        width: 12px;
+    }
+    .icon-style{
+        background-color:#F5F5F7 ;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 5px;
+    }
+    .scale-content{
+        background-color:#fff;
+    height: 484px;
+        width: 106%;
+    margin-left: -8px;
+    margin-top: -5px;
+    }
+    .scale-title{
+        background-color:#F5F5F7 ;
+        height: 69px;
+    }
   .subtitle-style{
     font-weight: 900;text-transform: capitalize; margin-top:2%; margin-right:45px;
   }
     .title-text-style{
-    margin-left: 23px;  
+        margin-left: 60px;
    }
   .button-title{
     margin-left: -15px;
@@ -22,7 +54,14 @@ page-support {
         box-shadow:0px 0px !important ;
     }
     .p-style{
+
         font-size: 1.3rem;
+        color: #928a8a;
+        width: 222px;
+        width: 222px;
+        margin-bottom: 18px;
+        
+        margin-left: 16px
     }
     .text-style-p{
         width: 91%;
@@ -32,10 +71,12 @@ page-support {
     }
     .p-top
     {
-        margin-top: 46px;
+        margin-top: 21px;
     }
     .text-info-style{
-        text-align:center; margin-top:-10px;color:gray
+        text-align:center; margin-top:-10px;
+        margin-top: 2px;
+        color: #3478ce;
     }
     .text-style{
         text-align:center;
@@ -44,11 +85,12 @@ page-support {
           font-weight: 900;
     }
     .center {
-        margin-top: 35%;
+        margin-top: 16%;
         display: block;
         margin-left: auto;
         margin-right: auto;
         height: 24px;
+        width: 25px;
     
     }
     .button-inner{
