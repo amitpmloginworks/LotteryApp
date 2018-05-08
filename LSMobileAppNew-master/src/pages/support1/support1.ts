@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController,ModalController } from 'ionic-angular';
 import { SupportPage } from '../support/support';
+import { HelpPage } from '../help/help';
 
 
 /**
@@ -16,19 +17,23 @@ import { SupportPage } from '../support/support';
 })
 export class Support1Page {
   items;
-  constructor(public viewCtrl:ViewController,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl:ModalController,public viewCtrl:ViewController,public navCtrl: NavController, public navParams: NavParams) {
     this.initializeItems();
   }
   taponitem(i)
   {
     if(i==2)
     {
-      this.navCtrl.setRoot(SupportPage);
+     
+
+      let supportModal = this.modalCtrl.create(SupportPage);
+       supportModal.present(); 
+
     }
   }
   close()
   {
-    this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss()
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Support1Page');
@@ -39,7 +44,7 @@ export class Support1Page {
   }
   initializeItems() {
     this.items = [
-      'Payment Billing and Subscription',
+      'Payment,Billing and Subscription',
       'Tickets,Lines or Draws',
       'Syndicate Management',
       'Games and Scratch Cards',
@@ -64,7 +69,13 @@ export class Support1Page {
       })
     }
   }
+  
 }
+
+
+
+
+
 
 
 
