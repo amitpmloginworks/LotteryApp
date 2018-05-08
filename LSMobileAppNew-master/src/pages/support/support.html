@@ -1,31 +1,32 @@
-<!--
-  Generated template for the SupportPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
 
 
-    <ion-title text-center class="title-text-style" >Support</ion-title>
-    <ion-buttons class="button-title" left>
-        <button ion-button icon-only clear (click)="goBack()">
-          <ion-icon name="arrow-back"></ion-icon>
-        </button>
-        </ion-buttons>
+    <ion-title text-left class="title-text-style" >Support</ion-title>
+  
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding style="background-color:#ffff">
+<ion-content padding style="background-color:#E6E6E6">
 
   
-  <button ion-button icon-only clear outline item-right (click)=" goBack()" class="subtitle-style" >
-      <ion-icon style="margin-left: -12px;" name="arrow-back"></ion-icon> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p> Creating Syndicates</p></button>
-  <div class="text-style-p p-top">
+  <!-- <button ion-button icon-only clear outline item-right (click)=" goBack()" class="subtitle-style" >
+      <ion-icon style="margin-left: -12px;" name="arrow-back"></ion-icon> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p     style="margin-left: 18px;    text-transform: none;"> Creating syndicates</p></button> -->
+ <ion-card class="scale-content">
+   <div class="scale-title" >
+<div class="icon-style" (click)="  goBack()">
+ 
+  <img class="img-style" src="assets/icon/cross.png">
+</div>
+
+<div class="header-style" >
+<p class="line-style">Creating syndicate</p>
+</div>
+   </div>
+      <div class="text-style-p p-top">
     <p class="p-style">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore .
@@ -36,8 +37,7 @@
       <p class="p-style">
          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-         reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-         pariatur.
+         reprehenderit in voluptate velit esse cillum 
          </p>
        </div>
 <div class="text-style-p">
@@ -48,7 +48,9 @@
         </p>
       
 </div>
- <img class="center" src="assets/icon/multimedia.png">
- <p  class="text-style" >Send Email</p>
- <p  class="text-info-style" >If this doesnot help-contact support </p>
+ <img class="center" src="assets/icon/message.png">
+ <!-- <p  class="text-style" >Send Email</p> -->
+ <p  class="text-info-style" >If this does not help<b style="color:#3478ce"> Contact Support</b> </p>
+</ion-card>
 </ion-content>
+
