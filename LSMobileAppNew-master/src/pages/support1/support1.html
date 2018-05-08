@@ -1,17 +1,22 @@
 
+<ion-header>
 
-<div>hi</div>
-<ion-content padding style="background-color: rgba(0,0,0,.1);">
+  <ion-navbar>
+
+
+    <ion-title text-center class="title-text-style" >Support</ion-title>
+    <ion-buttons class="button-title" left>
+        <button ion-button icon-only clear (click)=" close()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background-color:#ffff" >
     <div class="content-page">
-    <div class="content-header" >
-    <p class="text-style">Support</p>
-    <button ion-button icon-end clear class="button-style" (click)="close()">
-     
-      <ion-icon name="close"></ion-icon>
-    </button>
-    </div>
-     <div style="display: flex;
-      justify-content: center;">
+     <div class="search-style" >
       <ion-searchbar style="width: 65%;" (ionInput)="getItems($event)"></ion-searchbar>
     </div>
     <hr class="hr-style" >
@@ -36,7 +41,7 @@
     </div>
     <div class="info-box" >
     <ion-row>
-      <p>If need further help,then email us.</p>
+      <p>If need further help. then email us</p>
     </ion-row>
     </div>
    </div>
